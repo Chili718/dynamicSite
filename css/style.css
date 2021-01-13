@@ -1,0 +1,895 @@
+/*
+Page CSS and Sections
+*/
+
+*{
+
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+  background-color:  rgb(18, 18, 17);
+}
+
+section {
+  background: rgb(18, 18, 17);
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/1.9);
+  z-index: 3;
+  height: auto;
+  color: #ffffff;
+  overflow: hidden;
+
+}
+
+/**************************************************************************
+Scrollbar
+**************************************************************************/
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(18, 18, 17);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ababab;
+}
+
+/**************************************************************************
+Preloader
+**************************************************************************/
+
+.preloader{
+
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(18, 18, 17);
+  position: fixed;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease;
+
+
+}
+
+.ship{
+
+  max-width: 200px;
+  min-width: 200px;
+  width: 30vw;
+  height: auto;
+
+}
+
+.loadStuff{
+
+  display: flex;
+
+}
+
+.loadStuff img{
+
+  max-width: 200px;
+  min-width: 200px;
+  width: 25vw;
+  height: auto;
+
+}
+
+.loaded{
+
+  opacity: 0;
+  pointer-events: none;
+
+}
+
+/**************************************************************************
+Navbar and Burger
+**************************************************************************/
+
+.navbar{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3px;
+        font-family: rift, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        width: 100%;
+        height: 85px;
+        position: fixed;
+        background-color: transparent;
+        z-index: 4;
+
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+}
+
+.nav-links li{
+
+  list-style: none;
+
+}
+.nav-links a{
+
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  padding-bottom: 2px;
+
+}
+/*Animation for the navbar links*/
+ .nav-links a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+	-moz-transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+@media (hover: hover){
+  .nav-links a:hover:before{
+    visibility: visible;
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+  	-moz-transform: scaleX(1);
+  }
+}
+
+.navbar-image{
+  z-index: 5;
+  width: 166.77px;
+  height: 85px;
+  padding-top: 10px;
+
+}
+
+.miglink{
+
+  z-index: 5;
+
+}
+
+.nottransparent{
+  background-color: rgba(13, 13, 12, 0.95);
+}
+
+.burger{
+  z-index: 5;
+  display: none;
+  cursor: pointer;
+  max-width: 100%;
+  max-height: 100%;
+
+}
+
+.burger div{
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 5px;
+  transition: 0.5s ease-in-out;
+}
+/*Burger Animation*/
+.ex .line1{
+
+  transform: rotate(-45deg) translate(-5px, 6px);
+
+}
+
+.ex .line2{
+
+  transform: rotateY(-90deg);
+
+}
+
+.ex .line3{
+
+  transform: rotate(45deg) translate(-5px, -6px);
+
+}
+
+/*Links Animation*/
+
+@keyframes linksFadeIn{
+
+  from{
+
+    opacity: 0;
+    transform: translate(50px);
+
+  }
+  to{
+
+    opacity: 1;
+    transform: translate(0px);
+
+  }
+
+}
+
+/**************************************************************************
+Parallax and Text Inside (and SVG)
+**************************************************************************/
+
+.parallax{
+    overflow-y: auto;
+    background: transparent;
+}
+
+.parallaxstart{
+
+    overflow-x: hidden;
+    background: transparent;
+}
+
+svg{
+
+  z-index: 2;
+
+}
+
+.image-text{
+
+  font-family: sketchnote-square, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 85px;
+  z-index: 1;
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding-top: 100px;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px rgba(0, 0, 0, 1);
+  word-wrap: break-word;
+
+}
+
+.image-anim{
+
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
+
+.image-anim svg{
+
+  width: 55vw;
+  max-width: 40rem;
+  height: auto;
+
+}
+
+.image-anim p{
+  z-index: 2;
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.6vw;
+  color: #ffffff;
+  padding-top: 1vw;
+  opacity: 0;
+  animation: fadeIn 2s ease-in 6s 1 normal forwards;
+
+}
+
+#nim path:nth-child(1){
+  stroke-dasharray: 371px;
+  stroke-dashoffset: 371px;
+  animation: line-anim 3s ease forwards 2s;
+}
+#nim path:nth-child(2){
+  stroke-dasharray: 350.6px;
+  stroke-dashoffset: 350.6px;
+  animation: line-anim 3s ease forwards 2.3s;
+}
+#nim path:nth-child(3){
+  stroke-dasharray: 384.8px;
+  stroke-dashoffset: 384.8px;
+  animation: line-anim 3s ease forwards 2.6s;
+}
+#nim path:nth-child(4){
+  stroke-dasharray: 324.5px;
+  stroke-dashoffset: 324.5px;
+  animation: line-anim 3s ease forwards 2.9s;
+}
+#nim path:nth-child(5){
+  stroke-dasharray: 239.5px;
+  stroke-dashoffset: 239.5px;
+  animation: line-anim 3s ease forwards 3.0s;
+}
+#nim path:nth-child(6){
+  stroke-dasharray: 319.6px;
+  stroke-dashoffset: 319.6px;
+  animation: line-anim 3s ease forwards 3.3s;
+}
+#nim path:nth-child(7){
+  stroke-dasharray: 387.5px;
+  stroke-dashoffset: 387.5px;
+  animation: line-anim 3s ease forwards 3.5s;
+}
+
+@keyframes line-anim{
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes fadeIn{
+  100% {
+    opacity: 1;
+  }
+}
+
+.downArrow{
+  position: absolute;
+  left: 48%;
+  bottom: 8%;
+  z-index: 3;
+  animation: bounce 1s ease infinite alternate;
+
+}
+
+.downArrow span{
+
+  display: block;
+  width: 35px;
+  height: 35px;
+  border-bottom: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  transform: rotate(45deg);
+
+}
+
+@keyframes bounce{
+  from{
+    transform: translateY(0px);
+
+  }
+  to{
+    transform: translateY(40px);
+
+  }
+
+}
+
+
+/**************************************************************************
+About Sections
+**************************************************************************/
+
+.about{
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1% 1%;
+}
+
+.abouttext{
+  padding-right: 2%;
+  word-wrap: break-word;
+  width: 40vw;
+  border-left: 2px solid white;
+  padding-left: 4%;
+}
+
+
+.picofme{
+  width: 45vw;
+  max-width: 60rem;
+  height:auto;
+  padding-left: 2%;
+}
+
+/**************************************************************************
+Code Projects
+**************************************************************************/
+
+.codeprojects{
+
+  display: flex;
+  justify-content: space-around;
+  padding: 1% 1%;
+
+}
+
+.codeprojects div{
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.codeprojects h1{
+
+  padding-bottom: 10px;
+
+}
+
+.container{
+  position: relative;
+  padding-bottom: 2%;
+}
+
+.container:hover img{
+
+  opacity: 0.3;
+  transition: 0.5s ease-in-out;
+
+}
+
+.container:hover a{
+
+  color: rgba(255,255,255,1);
+  visibility: visible;
+  transition: 0.5s ease-in-out;
+
+}
+
+.org{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.org a{
+
+  text-decoration: none;
+  color: rgba(255,255,255,0);
+  padding: 10% 0%;
+  font-size: 100%;
+  visibility: hidden;
+
+}
+
+/**************************************************************************
+Credit to Mary Lou for the idea and implementation of the effect
+
+https://tympanus.net/codrops/author/crnacura/
+**************************************************************************/
+
+.org a::before,
+.org a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.org a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.org a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+.org a:hover::before,
+.org a:hover::after,
+.org a:focus::before,
+.org a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+/**************************************************************************
+**************************************************************************/
+
+
+.codeprojects img{
+  max-width: 50rem;
+  width: 25vw;
+  height: auto;
+}
+
+.codeprojects p{
+
+  padding-top: 2%;
+
+}
+
+
+/**************************************************************************
+Photoshop Projects
+**************************************************************************/
+
+
+.ps p{
+
+  padding: 4% 4%;
+  display: flex;
+  align-items: center;
+
+}
+
+
+/**************************************************************************
+End (Footer kind of)
+**************************************************************************/
+
+.end{
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.end h1{
+
+  padding-bottom: 40px;
+  padding-top: 100px;
+  font-size: 2rem;
+  transition: 0.5s ease-in-out;
+
+
+}
+
+.end p{
+
+    padding-top: 80px;
+    font-size: 1rem;
+
+}
+
+.end ul{
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.end li{
+
+  list-style: none;
+
+}
+
+.end a.button {
+  display: inline-block;
+  color: rgb(18, 18, 17);
+  padding: 0.6rem 1.1rem;
+  text-transform: uppercase;
+  border-radius: 0.8rem;
+  letter-spacing: 0.3em;
+  background-color: #ffffff;
+  border: 2px solid #121211;
+  text-decoration: none;
+  font-size: 125%;
+  transition: all 0.3s ease-in-out;
+}
+
+.end a.button:hover{
+
+  transition: all 0.3s ease-in-out;
+  background: rgb(18, 18, 17);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  transform: scale(1.1);
+
+}
+
+.end img{
+
+  max-width: 5rem;
+  width: 5vw;
+  min-width: 4rem;
+  height: auto;
+  padding: 2rem;
+  transition: all .3s ease-in-out;
+
+}
+
+.end img:hover{
+
+  transform: scale(1.4);
+
+}
+
+/**************************************************************************
+Other Devices CSS
+**************************************************************************/
+
+@media screen and (max-width: 1920px){
+
+    .picofme{
+      max-width: 40rem;
+    }
+    .codeprojects img{
+
+      max-width: 45rem;
+
+    }
+    .codeprojects img{
+
+      min-width: 30rem;
+
+    }
+
+}
+@media screen and (max-width: 1028px){
+
+  .navbar{
+
+    min-height: 60px;
+    height: 8.2vw;
+
+  }
+
+  .image-anim p{
+
+    font-size: 17px;
+
+
+  }
+  .codeprojects img{
+
+    min-width: 25rem;
+
+  }
+  .codeprojects{
+      padding: 1.5% 1.5%;
+  }
+
+  .org a{
+
+    font-size: 110%;
+
+  }
+
+  .navbar-image{
+    width: 16vw;
+    height: auto;
+    min-width: 98.69px;
+    min-height: 50px;
+
+  }
+
+}
+
+@media screen and (max-width: 920px){
+
+/*Hamburger*/
+.nav-links{
+
+  visibility: hidden;
+  position: fixed;
+  background: rgba(13, 13, 12, 0.9);
+  height: 105vh;
+  width: 101%;
+  transform: translate(-0.8%, -60%);
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transition: 0.5s ease-in-out;
+}
+
+.nav-links a{
+
+  font-size: 25px;
+
+}
+
+.nav-links li{
+
+  opacity: 0;
+
+}
+
+.open{
+
+  visibility: visible;
+  transform: translate(-0.8%, 42%);
+
+}
+
+.burger{
+
+  display: block;
+  padding-right: 5vw;
+
+}
+
+.about{
+
+  flex-direction: column;
+
+
+}
+
+.abouttext{
+  padding: 4% 0%;
+  border-left: none;
+  border-top: 2px solid white;
+  width: 75vw;
+  font-size: 1.1rem;
+}
+
+.picofme{
+
+  padding-bottom: 4%;
+
+
+}
+
+.codeprojects{
+  flex-direction: column;
+    padding: 2% 2%;
+}
+
+.codeprojects div{
+
+  padding: 3% 0%;
+
+}
+
+}
+
+@media screen and (max-width: 768px){
+
+
+
+  .end img{
+    min-width: 3rem;
+    padding: 2rem;
+  }
+  .navbar{
+
+    min-height: 50px;
+
+  }
+  .image-text{
+    font-size: 3rem;
+  }
+  .picofme{
+
+    min-width: 20rem;
+
+  }
+  .org a{
+
+    font-size: 140%;
+
+  }
+  .ship{
+
+    min-width: 100px;
+
+  }
+  .loadStuff img{
+
+    min-width: 100px;
+
+  }
+
+
+}
+
+@media screen and (max-width: 472px){
+
+  .end h1{
+
+    font-size: 1.7rem;
+    transition: 0.5s ease-in-out;
+
+  }
+  .end img{
+
+    min-width: 2.5rem;
+    padding: 1rem;
+
+  }
+
+  .abouttext{
+
+    font-size: 0.8rem;
+  }
+
+  .image-anim p{
+
+    font-size: 4vw;
+
+
+  }
+  .codeprojects div{
+    padding: 4% 2%;
+  }
+  .codeprojects img{
+
+    min-width: 18rem;
+
+  }
+  .downArrow span{
+
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    width: 25px;
+    height: 25px;
+
+  }
+
+}
+
+@media screen and (max-width: 340px){
+
+  .abouttext{
+    font-size: 0.7rem;
+  }
+  .about{
+
+    padding: 3% 1%;
+
+  }
+  .picofme{
+
+    min-width: 17rem;
+
+  }
+  .codeprojects img{
+
+    min-width: 16rem;
+
+  }
+
+}
+
+@media screen and (max-height: 700px){
+
+  .downArrow{
+
+    bottom: 12%;
+
+  }
+
+}
