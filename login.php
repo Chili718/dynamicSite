@@ -1,3 +1,14 @@
+<?php
+session_start();
+//print_r($_SESSION);
+if(isset($_SESSION['verified']))
+{
+  header("Location: index.php");
+  die();
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +21,7 @@
 
   <link rel="icon" href="images/icon.ico">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/upload.css">
   <link rel="stylesheet" href="css/login.css">
   <!-- Front I use from Adobe -->
   <script src="https://use.typekit.net/efv3afb.js"></script>
@@ -17,6 +29,7 @@
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
+  <script src="linlout.js"></script>
 
 </head>
 
@@ -43,7 +56,20 @@
         <li><a href="index.php#photoshop">Photoshop Work</a></li>
         <li><a href="index.php#contact">Contact</a></li>
         <li><a href="">Resume</a></li>
-        <li><a href="login.php">Login</a></li>
+        <?php
+
+          if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
+          {
+
+                echo "<li><a href='login.php'>Login</a></li>";
+
+          }else{
+
+                echo "<li><a href='#' onclick='logout()'>Logout</a></li>";
+
+          }
+
+         ?>
       </ul>
       <div class="burger">
         <div class="line1"></div>
@@ -54,7 +80,25 @@
 
   <div class="login">
 
-    <h1>Login</h1>
+    <form class="frm" onsubmit="login(); return false">
+      <h1>Login</h1>
+      <h3 id="validateTXT"></h3>
+      <div class="hline">
+      <div class="labl">
+      <label for="imageNme" id="pad">Name: </label>
+      <label for="imageDes">Description: </label>
+      </div>
+      <div class="txt">
+      <input type="text" name="userNME" placeholder="Username..."/>
+      <input type="password" name="pswrd" placeholder="Password..."/>
+      </div>
+      </div>
+      <div class="sub">
+        <br><br>
+        <div onclick="login()" class="btn">Login</div>
+        <input type= "submit" style="display: none">
+      </div>
+    </form>
 
   </div>
 

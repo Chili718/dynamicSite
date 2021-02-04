@@ -25,22 +25,49 @@ Forms and button css for upload page
   font-style: normal;
   font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/0.8);
   color: #ffffff;
+  text-align: center;
+
+}
+
+.upload h2{
+
+  padding: 0em 0em 0.8em 0em;
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/1.7);
+  color: #1fb012;
+  text-align: center;
+
+}
+
+.upload h3{
+
+  padding: 0em 0em 0.8em 0em;
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/1.5);
+  color: #ad3821;
+  text-align: center;
 
 }
 
 .frm{
 
   background-color: rgb(46, 46, 45);
-  padding: 5em 2em 3em 2em;
+  padding: 4em 2em 3em 2em;
   border-radius: 5em;
    box-shadow:0px 0px 20px 5px rgba(0,0,0,0.5) inset;
+   max-width: 800px;
 
 
 }
 
-.frm input[type=text]{
+.frm input[type=text], .frm input[type=password]{
 
-  min-width: 40vw;
+  width: 40vw;
+  max-width: 500px;
   border-style: groove;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -166,7 +193,7 @@ Forms and button css for upload page
 
 .txt{
 
-  padding: 0vw 5vw 0vw 5vw;
+  padding: 0vw 5vw 0vw 3vw;
 
 }
 

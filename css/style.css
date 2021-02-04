@@ -544,12 +544,57 @@ https://tympanus.net/codrops/author/crnacura/
 Photoshop Projects
 **************************************************************************/
 
+.ps{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2em;
+
+}
 
 .ps p{
 
   padding: 4% 4%;
   display: flex;
   align-items: center;
+
+}
+
+.btn{
+
+  outline: 0;
+  background-color: rgba(255, 255, 255);
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 8px rgb(107, 107, 107);
+  border-radius: 2em;
+  max-width: auto;
+
+}
+
+.btn:hover{
+
+  opacity: 0.8;
+
+}
+
+.btn:active{
+
+  background-color: rgb(20, 115, 18);
+  box-shadow: 0 2px rgb(14, 82, 12);
+  transform: translateY(4px);
 
 }
 

@@ -1,7 +1,24 @@
 <?php
 
-$con = mysqli_connect("localhost", "root", "", "mysite") or die($con->connect_error);
+session_start();
+//print_r($_SESSION);
+if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
+{
+  header("Location: login.php");
+  die();
+
+}
+
+$con = @mysqli_connect("localhost", "root", "", "mysite");
+
+if (!$con) {
+  echo '<script>alert("Could not connect to db, whoops!")</script>';
+  die("<script>window.location = 'index.php';</script>");
+}
+
 $table = 'photoshopwork';
+$bool = false;
+$stmt = "";
 
 if(isset($_POST['insert']))
 {
@@ -16,11 +33,27 @@ $picdes = $_POST['imageDes'];
   $imDir = 'photoshopWork/'.$_FILES['image']['name'];
   move_uploaded_file($_FILES['image']['tmp_name'], $imDir);
 
-  $sql = "INSERT INTO $table (name, description, path) VALUES ('$picnim','$picdes','$imDir')";
+  $sql = $con->prepare("INSERT INTO photoshopwork (name, description, path) VALUES (?, ?, ?)");
 
-  $con->query($sql) or die($con->error);
+  $sql->bind_param("sss", $picnim, $picdes, $imDir);
 
-  mysql_close($con);
+  //"INSERT INTO $table (name, description, path) VALUES ('$picnim','$picdes','$imDir')";
+
+  //$con->query($sql) or die($con->error);
+
+  if($sql->execute())
+  {
+
+    $stmt = "Image Uploaded Successfully!";
+
+  }
+  else {
+    $stmt = "";
+  }
+
+  //mysql_close($con);
+
+  $con->close();
 
 }
 
@@ -44,7 +77,8 @@ $picdes = $_POST['imageDes'];
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-
+  <script src="linlout.js"></script>
+  <script src="test.js"></script>
 </head>
 
 <body>
@@ -70,7 +104,20 @@ $picdes = $_POST['imageDes'];
         <li><a href="index.php#photoshop">Photoshop Work</a></li>
         <li><a href="index.php#contact">Contact</a></li>
         <li><a href="">Resume</a></li>
-        <li><a href="login.php">Login</a></li>
+        <?php
+
+          if(!isset($_SESSION['verified']) || $_SESSION['verified'] != 1)
+          {
+
+                echo "<li><a href='login.php'>Login</a></li>";
+
+          }else{
+
+                echo "<li><a href='#' onclick='logout()'>Logout</a></li>";
+
+          }
+
+         ?>
       </ul>
       <div class="burger">
         <div class="line1"></div>
@@ -80,9 +127,10 @@ $picdes = $_POST['imageDes'];
   </div>
 
   <div class="upload">
-    <h1>Upload Image</h1>
 
     <form class="frm" method="POST" enctype="multipart/form-data">
+      <h1>Upload Image</h1>
+      <h3 id="validateTXT"></h3>
       <div class="hline">
       <div class="labl">
       <label for="imageNme" id="pad">Name: </label>
@@ -100,7 +148,21 @@ $picdes = $_POST['imageDes'];
       <!--
       <label for="image">Choose a file...</label>
       -->
-      <br /><br />
+      <br />
+
+
+      <?php echo "<h2 id='change'>" . $stmt . "</h2>" ?>
+
+      <?php
+        echo "<script>
+
+        setTimeout(function(){
+          document.getElementById('change').innerHTML = '';
+        }, 3000);
+
+        </script>"
+       ?>
+
       <input type="submit" name="insert" id="insert" value="Upload"/>
     </div>
     </form>
@@ -123,7 +185,7 @@ $picdes = $_POST['imageDes'];
 
       if(image_name == '' || image == '' || image_des == '')
       {
-        alert("Please Select Image");
+        document.getElementById('validateTXT').innerHTML = 'Please complete all fields';
         return false;
 
       }
@@ -133,7 +195,7 @@ $picdes = $_POST['imageDes'];
 
         if (jQuery.inArray(extension, ['gif', 'png', 'jpg', 'jpeg']) == -1)
         {
-          alert('Invalid Image File');
+          document.getElementById('validateTXT').innerHTML = 'Invalid File Type';
           $('#image').val('');
           return false;
         }

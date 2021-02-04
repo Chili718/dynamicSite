@@ -28,6 +28,8 @@
       gtag('config', 'UA-156268666-1');
     </script>
 
+    <script src="linlout.js"></script>
+
     <script>
     $(document).ready(function() {
 
@@ -99,7 +101,23 @@
           <li><a href="#photoshop">Photoshop Work</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="">Resume</a></li>
-          <li><a href="login.php">Login</a></li>
+
+          <?php
+            session_start();
+
+            if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
+            {
+
+                  echo "<li><a href='login.php'>Login</a></li>";
+
+            }else{
+
+                  echo "<li><a href='#' onclick='logout()'>Logout</a></li>";
+
+            }
+
+           ?>
+
         </ul>
         <div class="burger">
           <div class="line1"></div>
@@ -191,6 +209,8 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt facilisis elementum. Proin tortor lorem, vehicula et libero quis, convallis fermentum nunc. Quisque sed urna sollicitudin, suscipit augue quis, porttitor odio. Maecenas ut elementum lorem. Etiam sagittis ex ante. Aliquam eu nibh tortor. Suspendisse dignissim aliquet ex, eu mattis sem feugiat vitae. Quisque semper facilisis nisl, a maximus nulla ullamcorper eu. Vivamus id vestibulum velit. Phasellus ornare nec ex vel commodo. Phasellus euismod elit tortor, et dapibus risus cursus ut. Donec pharetra odio augue, porta egestas velit faucibus at. Quisque tristique ipsum arcu, eu fermentum risus sollicitudin vitae. Morbi vel enim magna. Suspendisse blandit dignissim tristique. Ut ullamcorper eget erat iaculis ornare.
       </p>
 
+      <div onclick="location.href='upload.php'" class="btn">Upload Files</div>
+
       </section>
 
       <div id="contact" class="parallax" data-parallax="scroll" data-z-index="0" data-image-src="images/third.jpg" data-natural-width="3855" data-natural-height="3198">
@@ -210,7 +230,7 @@
 
          <a class="button" href="mailto: ticej2@winthropalumni.com" target="_blank">Email Me</a>
 
-         <p>&copy; 2019 Jon Tice.<p>
+         <p>&copy; 2021 Jon Tice.<p>
 
       </section>
 
