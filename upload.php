@@ -9,23 +9,24 @@ if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
 
 }
 
-$con = @mysqli_connect("localhost", "root", "", "mysite");
+require 'php/dbCON.php';
 
 if (!$con) {
   echo '<script>alert("Could not connect to db, whoops!")</script>';
   die("<script>window.location = 'index.php';</script>");
 }
 
-$table = 'photoshopwork';
-$bool = false;
+//$table = 'photoshopwork';
 $stmt = "";
+$stmtB = "";
+$close = "";
 
 if(isset($_POST['insert']))
 {
   //print_r($_FILES);
   //print_r($_POST);
-$picnim = $_POST['imageNme'];
-$picdes = $_POST['imageDes'];
+  $picnim = $_POST['imageNme'];
+  $picdes = $_POST['imageDes'];
 
   //echo $picnim;
   //echo $picdes;
@@ -44,12 +45,18 @@ $picdes = $_POST['imageDes'];
   if($sql->execute())
   {
 
-    $stmt = "Image Uploaded Successfully!";
+    $stmt = "<h2 id='change'>Image Uploaded Successfully!</h2>";
+    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 3000);</script>";
 
   }
   else {
-    $stmt = "";
+
+    $stmtB = "<h3 id='change'>Image Could Not Be Uploaded!</h3>";
+    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 3000);</script>";
+
   }
+
+
 
   //mysql_close($con);
 
@@ -131,6 +138,11 @@ $picdes = $_POST['imageDes'];
     <form class="frm" method="POST" enctype="multipart/form-data">
       <h1>Upload Image</h1>
       <h3 id="validateTXT"></h3>
+
+      <?php
+        echo $stmtB
+      ?>
+
       <div class="hline">
       <div class="labl">
       <label for="imageNme" id="pad">Name: </label>
@@ -151,17 +163,10 @@ $picdes = $_POST['imageDes'];
       <br />
 
 
-      <?php echo "<h2 id='change'>" . $stmt . "</h2>" ?>
-
       <?php
-        echo "<script>
-
-        setTimeout(function(){
-          document.getElementById('change').innerHTML = '';
-        }, 3000);
-
-        </script>"
-       ?>
+            echo $stmt;
+            echo $close;
+      ?>
 
       <input type="submit" name="insert" id="insert" value="Upload"/>
     </div>
@@ -175,6 +180,7 @@ $picdes = $_POST['imageDes'];
 </html>
 
 <script>
+
   $(document).ready(function(){
 
     $('#insert').click(function(){
@@ -185,7 +191,12 @@ $picdes = $_POST['imageDes'];
 
       if(image_name == '' || image == '' || image_des == '')
       {
-        document.getElementById('validateTXT').innerHTML = 'Please complete all fields';
+        document.getElementById('validateTXT').innerHTML = 'Please complete all fields!';
+
+        setTimeout(function(){
+          document.getElementById('validateTXT').innerHTML = '';
+        }, 3000);
+
         return false;
 
       }
@@ -195,14 +206,23 @@ $picdes = $_POST['imageDes'];
 
         if (jQuery.inArray(extension, ['gif', 'png', 'jpg', 'jpeg']) == -1)
         {
-          document.getElementById('validateTXT').innerHTML = 'Invalid File Type';
+          document.getElementById('validateTXT').innerHTML = 'Invalid File Type!';
+
+          setTimeout(function(){
+            document.getElementById('validateTXT').innerHTML = '';
+          }, 3000);
+
           $('#image').val('');
           return false;
         }
       }
 
-
     });
 
   });
+  //nifty js to remove confirm form resubmission
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+
 </script>

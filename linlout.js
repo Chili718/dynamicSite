@@ -9,7 +9,15 @@ function login(){
       if (xhr.responseText === "true") {
         window.location = "upload.php";
       }else {
-        document.getElementById('validateTXT').innerHTML = 'Invalid Username or Password';
+        if (xhr.responseText === "DBF") {
+          document.getElementById('validateTXT').innerHTML = 'Looks like its the internet, or me though.';
+        }else{
+          document.getElementById('validateTXT').innerHTML = 'Invalid Username or Password';
+        }
+
+        setTimeout(function(){
+          document.getElementById('validateTXT').innerHTML = '';
+        }, 4000);
       }
     }
   });

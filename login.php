@@ -79,7 +79,10 @@ if(isset($_SESSION['verified']))
   </div>
 
   <div class="login">
-
+    <!--
+    Handle the form submission vis JS when hitting enter "submitting the form"
+    another way than clicking the button
+    -->
     <form class="frm" onsubmit="login(); return false">
       <h1>Login</h1>
       <h3 id="validateTXT"></h3>
