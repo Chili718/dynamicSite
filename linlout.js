@@ -1,5 +1,6 @@
 
 function login(){
+
   var xhr = new XMLHttpRequest();
   var data = new FormData(document.querySelector("form"));
   xhr.open("POST", "php/login.php", true);

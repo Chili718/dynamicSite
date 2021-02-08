@@ -1,68 +1,6 @@
 <?php
 
-session_start();
-//print_r($_SESSION);
-if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
-{
-  header("Location: login.php");
-  die();
-
-}
-
-require 'php/dbCON.php';
-
-if (!$con) {
-  echo '<script>alert("Could not connect to db, whoops!")</script>';
-  die("<script>window.location = 'index.php';</script>");
-}
-
-//$table = 'photoshopwork';
-$stmt = "";
-$stmtB = "";
-$close = "";
-
-if(isset($_POST['insert']))
-{
-  //print_r($_FILES);
-  //print_r($_POST);
-  $picnim = $_POST['imageNme'];
-  $picdes = $_POST['imageDes'];
-
-  //echo $picnim;
-  //echo $picdes;
-
-  $imDir = 'photoshopWork/'.$_FILES['image']['name'];
-  move_uploaded_file($_FILES['image']['tmp_name'], $imDir);
-
-  $sql = $con->prepare("INSERT INTO photoshopwork (name, description, path) VALUES (?, ?, ?)");
-
-  $sql->bind_param("sss", $picnim, $picdes, $imDir);
-
-  //"INSERT INTO $table (name, description, path) VALUES ('$picnim','$picdes','$imDir')";
-
-  //$con->query($sql) or die($con->error);
-
-  if($sql->execute())
-  {
-
-    $stmt = "<h2 id='change'>Image Uploaded Successfully!</h2>";
-    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 3000);</script>";
-
-  }
-  else {
-
-    $stmtB = "<h3 id='change'>Image Could Not Be Uploaded!</h3>";
-    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 3000);</script>";
-
-  }
-
-
-
-  //mysql_close($con);
-
-  $con->close();
-
-}
+  require 'php/upload.php';
 
  ?>
 <!DOCTYPE html>
@@ -85,7 +23,6 @@ if(isset($_POST['insert']))
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
   <script src="linlout.js"></script>
-  <script src="test.js"></script>
 </head>
 
 <body>
@@ -145,7 +82,7 @@ if(isset($_POST['insert']))
 
       <div class="hline">
       <div class="labl">
-      <label for="imageNme" id="pad">Name: </label>
+      <label for="imageNme" >Name: </label>
       <label for="imageDes">Description: </label>
       </div>
       <div class="txt">
@@ -155,13 +92,11 @@ if(isset($_POST['insert']))
       </div>
 
     <div class="sub">
-      <br /><br />
       <input type="file" name="image" id="image" value=""/>
       <!--
       <label for="image">Choose a file...</label>
       -->
-      <br />
-
+      <br/>
 
       <?php
             echo $stmt;

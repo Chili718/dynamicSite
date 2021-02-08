@@ -17,7 +17,7 @@ if(isset($_SESSION['verified']))
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Upload Photoshop Work</title>
+  <title>Login</title>
 
   <link rel="icon" href="images/icon.ico">
   <link rel="stylesheet" href="css/style.css">
@@ -88,8 +88,8 @@ if(isset($_SESSION['verified']))
       <h3 id="validateTXT"></h3>
       <div class="hline">
       <div class="labl">
-      <label for="imageNme" id="pad">Name: </label>
-      <label for="imageDes">Description: </label>
+      <label id="pad">Username: </label>
+      <label>Password: </label>
       </div>
       <div class="txt">
       <input type="text" name="userNME" placeholder="Username..."/>

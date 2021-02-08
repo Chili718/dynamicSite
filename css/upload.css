@@ -64,7 +64,7 @@ Forms and button css for upload page
 
 }
 
-.frm input[type=text], .frm input[type=password]{
+.frm input[type=text], .frm input[type=password], .frm input[type=email]{
 
   width: 40vw;
   max-width: 500px;
@@ -204,13 +204,13 @@ Forms and button css for upload page
 
 }
 
-.hline label:first-of-type{
+.hline label{
 
-  padding-bottom: 3vh;
+  margin-bottom: 3vh;
 
 }
 
-.hline input:first-of-type{
+.hline input{
 
   margin-bottom: 3vh;
 
