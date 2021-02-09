@@ -70,7 +70,7 @@ require 'php/user.php';
       </div>
   </div>
 
-  <div class="login">
+  <div class="upload">
     <!--
     Handle the form submission vis JS when hitting enter "submitting the form"
     another way than clicking the button
@@ -78,6 +78,7 @@ require 'php/user.php';
     <form class="frm" method="POST" >
       <h1>Create A User</h1>
       <h3 id="validateTXT"></h3>
+      <?php echo $rmsg ?>
       <div class="hline">
       <div class="labl">
 
@@ -94,6 +95,10 @@ require 'php/user.php';
       <input type="email" name="email" id="email" placeholder="Email..."/>
       </div>
       </div>
+      <?php
+            echo $cmplt;
+            echo $close;
+      ?>
       <div class="sub">
         <input type="submit" name="insert" id="insert" value="Create User"/>
       </div>
@@ -150,6 +155,19 @@ require 'php/user.php';
         }, 3000);
 
         return false;
+
+      }//I should make you add a special character but I don't want or need to do that for this
+      else if(pswrd.length < 8 || pswrd.match(RegExp('(?=.*[0-9])')) == null)//regular expression to save text space
+      {
+
+        document.getElementById('validateTXT').innerHTML = 'Password length must be at least 8 characters and contain 1 number!';
+
+        setTimeout(function(){
+          document.getElementById('validateTXT').innerHTML = '';
+        }, 3000);
+
+        return false;
+
 
       }
 

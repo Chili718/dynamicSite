@@ -59,7 +59,7 @@ if(isset($_POST['insert']))
 
 
   //mysql_close($con);
-
+  $sql->close();
   $con->close();
 
 }
