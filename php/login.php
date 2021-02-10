@@ -7,18 +7,34 @@
     echo 'DBF';
     die();
   }
-  //$con = mysqli_connect("localhost", "rooot", "", "mysite") or die($con->connect_error);
+
+  $msg = "";
+
   //search for Username
-  $stmt = $con->prepare("SELECT * FROM users WHERE username=? AND password=PASSWORD(?) LIMIT 1");
-  $stmt->bind_param("ss", $_POST['userNME'], $_POST['pswrd']);
+  //not limiting the query because the username and email are unique
+  $stmt = $con->prepare("SELECT password, salt, verified FROM userst WHERE username=? OR email=?");
+  $stmt->bind_param("ss", $_POST['userNME'], $_POST['userNME']);
 
   $stmt->execute();
-  $stmt->store_result();
+  $result = $stmt->get_result();
 
-  if($stmt->num_rows === 1){
+  if($result != false){
 
-    $_SESSION['verified'] = true;
-    echo "true";
+    $usr = $result->fetch_assoc();
+
+    $pep = "%^%";
+    $p = $usr['password'];
+    $slt = $usr['salt'];
+
+
+    if (password_verify($pep.$_POST['pswrd'].$pep.$slt, $p)) {
+      $_SESSION['verified'] = true;
+      echo "true";
+    }else{
+
+      echo "false";
+
+    }
 
   }else {
     echo "false";

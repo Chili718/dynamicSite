@@ -58,6 +58,7 @@ require 'php/user.php';
           }else{
 
                 echo "<li><a href='#' onclick='logout()'>Logout</a></li>";
+                echo "<script>activityWatcher()</script>";
 
           }
 
@@ -157,10 +158,11 @@ require 'php/user.php';
         return false;
 
       }//I should make you add a special character but I don't want or need to do that for this
-      else if(pswrd.length < 8 || pswrd.match(RegExp('(?=.*[0-9])')) == null)//regular expression to save text space
+      else if(pswrd.length < 8 || pswrd.match(RegExp('(?=.*[0-9])+(?=.*[A-Z])')) == null)
+      //regular expression checking for at least one number and capitol letter
       {
 
-        document.getElementById('validateTXT').innerHTML = 'Password length must be at least 8 characters and contain 1 number!';
+        document.getElementById('validateTXT').innerHTML = 'Password length must be at least 8 characters and contain 1 number and 1 capitol letter!';
 
         setTimeout(function(){
           document.getElementById('validateTXT').innerHTML = '';

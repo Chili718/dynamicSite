@@ -58,6 +58,7 @@
           }else{
 
                 echo "<li><a href='#' onclick='logout()'>Logout</a></li>";
+                echo "<script>activityWatcher()</script>";
 
           }
 

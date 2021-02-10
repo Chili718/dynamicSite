@@ -54,8 +54,10 @@
 
       if($(window).scrollTop() > 0){
         $(".navbar").addClass("nottransparent");
+        $(".addU").addClass("nottransparent");
       }else{
         $(".navbar").removeClass("nottransparent");
+        $(".addU").removeClass("nottransparent");
       }
 
     });
@@ -105,6 +107,8 @@
           <?php
             session_start();
 
+            //require 'timeO.php';
+
             if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
             {
 
@@ -113,6 +117,7 @@
             }else{
 
                   echo "<li><a href='#' onclick='logout()'>Logout</a></li>";
+                  echo "<script>activityWatcher()</script>";
 
             }
 
@@ -125,6 +130,17 @@
           <div class="line3"></div>
         </div>
     </div>
+
+    <?php
+
+    if(isset($_SESSION['verified']))
+    {
+
+      echo "<div class='addU'><a href='user.php'><img src='images/addUICON.png'></a></div>";
+
+    }
+
+    ?>
 
     <div id="home" class="parallaxstart" data-parallax="scroll" data-z-index="0" data-image-src="images/main.jpg" data-natural-width="3233" data-natural-height="3403">
         <div class="image-anim">
