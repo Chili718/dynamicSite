@@ -55,9 +55,11 @@
       if($(window).scrollTop() > 0){
         $(".navbar").addClass("nottransparent");
         $(".addU").addClass("nottransparent");
+        $(".addIM").addClass("nottransparent");
       }else{
         $(".navbar").removeClass("nottransparent");
         $(".addU").removeClass("nottransparent");
+        $(".addIM").removeClass("nottransparent");
       }
 
     });
@@ -137,6 +139,7 @@
     {
 
       echo "<div class='addU'><a href='user.php'><img src='images/addUICON.png'></a></div>";
+      echo "<div class='addIM'><a href='upload.php'><img src='images/addIMICON.png'></a></div>";
 
     }
 
@@ -221,11 +224,19 @@
 
      <section class="ps">
 
+       <?php
+
+       require "php/gp.php";
+
+       echo $pics;
+
+       ?>
+
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt facilisis elementum. Proin tortor lorem, vehicula et libero quis, convallis fermentum nunc. Quisque sed urna sollicitudin, suscipit augue quis, porttitor odio. Maecenas ut elementum lorem. Etiam sagittis ex ante. Aliquam eu nibh tortor. Suspendisse dignissim aliquet ex, eu mattis sem feugiat vitae. Quisque semper facilisis nisl, a maximus nulla ullamcorper eu. Vivamus id vestibulum velit. Phasellus ornare nec ex vel commodo. Phasellus euismod elit tortor, et dapibus risus cursus ut. Donec pharetra odio augue, porta egestas velit faucibus at. Quisque tristique ipsum arcu, eu fermentum risus sollicitudin vitae. Morbi vel enim magna. Suspendisse blandit dignissim tristique. Ut ullamcorper eget erat iaculis ornare.
       </p>
 
-      <div onclick="location.href='upload.php'" class="btn">Upload Files</div>
+      <div onclick="location.href='view.php'" class="btn">View All</div>
 
       </section>
 

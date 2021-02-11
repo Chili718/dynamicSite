@@ -8,7 +8,7 @@ function login(){
     if (xhr.readyState === 4 && xhr.status === 200){
       //alert(xhr.responseText);
       if (xhr.responseText === "true") {
-        window.location = "upload.php";
+        window.location = "index.php";
       }else {
         if (xhr.responseText === "DBF") {
           document.getElementById('validateTXT').innerHTML = 'Looks like its the internet, or me though.';

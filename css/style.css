@@ -267,6 +267,37 @@ Add users icon
 
 }
 
+/**************************************************************************
+Add PS Work icon
+**************************************************************************/
+
+.addIM{
+
+  position: fixed;
+  left: 1%;
+  bottom: 14%;
+  z-index: 10;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+  /*background-color: rgba(13, 13, 12, 0.95);
+  */
+}
+
+.addIM img{
+
+  max-width: 110px;
+  min-width: 65px;
+  width: 15vw;
+  height: auto;
+  transition: 0.2s ease-in-out;
+}
+
+.addIM:hover{
+
+  transform: scale(1.1);
+
+}
+
 .nottransparent{
   background-color: rgba(13, 13, 12, 0.95);
 }
