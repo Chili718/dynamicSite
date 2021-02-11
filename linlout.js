@@ -38,36 +38,44 @@ function logout(){
   });
   xhr.send();
 }
-//special thanks to Tim from thisintrestsme.com for the function :)
+//special thanks to Tim from thisintrestsme.com for the start of this function :)
 function activityWatcher(){
 
     //The number of seconds that have passed
     //since the user was active.
-    var secondsSinceLastActivity = 0;
+    var secondsSinceLastActivity = Date.now();
 
-    //Five minutes. 60 x 5 = 300 seconds.
-    var maxInactivity = (60 * 2);
+    secondsSinceLastActivity = (secondsSinceLastActivity / 1000).toFixed(0);
+
+    var seconds = (Date.now() / 1000).toFixed(0);
+
+    //Five minutes. 60 x 2 = 120 seconds.
+    var maxInactivity = (60 * 10);
 
     //Setup the setInterval method to run
     //every second. 1000 milliseconds = 1 second.
     setInterval(function(){
-        secondsSinceLastActivity++;
-        console.log(secondsSinceLastActivity + ' seconds since the user was last active');
+        //secondsSinceLastActivity++;
+        seconds = (Date.now() / 1000).toFixed(0);
+
+        //console.log((seconds - secondsSinceLastActivity) + ' seconds since the user was last active');
         //if the user has been inactive or idle for longer
         //then the seconds specified in maxInactivity
-        if(secondsSinceLastActivity > maxInactivity){
+        if((seconds - secondsSinceLastActivity) > maxInactivity){
             console.log('User has been inactive for more than ' + maxInactivity + ' seconds');
             //Redirect them to your logout.php page.
             logout();
             location.href = 'php/logout.php';
         }
-    }, 1000);
+    }, 5000);
 
     //The function that will be called whenever a user is active
     function activity(){
         //reset the secondsSinceLastActivity variable
         //back to 0
-        secondsSinceLastActivity = 0;
+        secondsSinceLastActivity = seconds;
+
+
     }
 
     //An array of DOM events that should be interpreted as
@@ -85,3 +93,13 @@ function activityWatcher(){
 
 
 }
+/*
+function logoutMaybe(){
+  //temporary fix
+  if(!window.location.href.contains(".php")){
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/logout.php", true);
+    xhr.send();
+  }
+}
+*/
