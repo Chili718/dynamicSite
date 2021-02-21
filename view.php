@@ -15,6 +15,7 @@ session_start();
 
   <link rel="icon" href="images/icon.ico">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/caro.css">
   <!-- Front I use from Adobe -->
   <script src="https://use.typekit.net/efv3afb.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -22,6 +23,25 @@ session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
   <script src="linlout.js"></script>
+
+  <script>
+
+  //change opacity of the header background on scroll
+  $(window).on("scroll", function(){
+
+    if($(window).scrollTop() > 0){
+      $(".navbar").addClass("nottransparent");
+      $(".addU").addClass("nottransparent");
+      $(".addIM").addClass("nottransparent");
+    }else{
+      $(".navbar").removeClass("nottransparent");
+      $(".addU").removeClass("nottransparent");
+      $(".addIM").removeClass("nottransparent");
+    }
+
+  });
+
+  </script>
 
 </head>
 
@@ -58,6 +78,7 @@ session_start();
           }else{
 
                 echo "<li><a href='#' onclick='logout()'>Logout</a></li>";
+                echo "<script>activityWatcher()</script>";
 
           }
 
@@ -70,9 +91,20 @@ session_start();
       </div>
   </div>
 
+  <?php
+
+  if(isset($_SESSION['verified']))
+  {
+
+    echo "<div class='addU'><a href='user.php'><img src='images/addUICON.png'></a></div>";
+    echo "<div class='addIM'><a href='upload.php'><img src='images/addIMICON.png'></a></div>";
+
+  }
+
+  ?>
 
 
-  </div>
+
 
  <script src="app.js"></script>
 </body>

@@ -10,6 +10,8 @@
     <title>Jon Tice - Designer and Developer</title>
     <link rel="icon" href="images/icon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/caro.css">
+    <link rel="stylesheet" href="css/lightbox.css">
     <!-- Front I use from Adobe -->
     <script src="https://use.typekit.net/efv3afb.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -224,16 +226,24 @@
 
      <section class="ps">
 
-       <?php
+       <div class="scene">
+         <div class="carousel">
 
-       require "php/gp.php";
+             <?php require "php/gp.php"; ?>
 
-       echo $pics;
+         </div>
+       </div>
 
-       ?>
+       <div class="carousel-options">
+
+         <div class="previous"><img src="images/arrow.png"></div>
+         <div class="next"><img src="images/arrow.png"></div>
+
+
+       </div>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt facilisis elementum. Proin tortor lorem, vehicula et libero quis, convallis fermentum nunc. Quisque sed urna sollicitudin, suscipit augue quis, porttitor odio. Maecenas ut elementum lorem. Etiam sagittis ex ante. Aliquam eu nibh tortor. Suspendisse dignissim aliquet ex, eu mattis sem feugiat vitae. Quisque semper facilisis nisl, a maximus nulla ullamcorper eu. Vivamus id vestibulum velit. Phasellus ornare nec ex vel commodo. Phasellus euismod elit tortor, et dapibus risus cursus ut. Donec pharetra odio augue, porta egestas velit faucibus at. Quisque tristique ipsum arcu, eu fermentum risus sollicitudin vitae. Morbi vel enim magna. Suspendisse blandit dignissim tristique. Ut ullamcorper eget erat iaculis ornare.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt facilisis elementum. Proin tortor lorem, vehicula et libero quis, convallis fermentum nunc. Quisque sed urna sollicitudin, suscipit augue quis, porttitor odio. Maecenas ut elementum lorem. Etiam sagittis ex ante.
       </p>
 
       <div onclick="location.href='view.php'" class="btn">View All</div>
@@ -261,6 +271,8 @@
 
       </section>
 
+      <script src="carousel.js"></script>
+      <script src="lightbox.js"></script>
       <script src="app.js"></script>
 
 

@@ -9,7 +9,18 @@
  }
  else
  {
-   $pics = "<h2>Pictures</h2>";
+
+   $table  = "photoshopwork";
+   $result = $con->query("SELECT * FROM $table ORDER BY RAND() LIMIT 9");
+
+   while($data = $result->fetch_assoc()){
+
+     //print_r($data);
+
+     echo "<div class = 'carousel_cell'><img src = '{$data['path']}'></div>";
+
+   }
+
  }
 
  $con->close();

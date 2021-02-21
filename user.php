@@ -23,6 +23,18 @@ require 'php/user.php';
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="linlout.js"></script>
+
+  <!--
+  small looks change to overrwrite the style.css bottom value on the add im icon
+  so its in a better looking postition b/c the add user icon isnt there
+  -->
+  <style>
+  .addIM{
+
+    bottom: 1%;
+
+  }
+  </style>
 </head>
 
 <body>
@@ -70,6 +82,17 @@ require 'php/user.php';
         <div class="line3"></div>
       </div>
   </div>
+
+  <?php
+
+  if(isset($_SESSION['verified']))
+  {
+
+    echo "<div class='addIM'><a href='upload.php'><img src='images/addIMICON.png'></a></div>";
+
+  }
+
+  ?>
 
   <div class="upload">
     <!--

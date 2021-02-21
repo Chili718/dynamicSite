@@ -71,6 +71,17 @@
       </div>
   </div>
 
+  <?php
+
+  if(isset($_SESSION['verified']))
+  {
+
+    echo "<div class='addU'><a href='user.php'><img src='images/addUICON.png'></a></div>";
+
+  }
+
+  ?>
+
   <div class="upload">
 
     <form class="frm" method="POST" enctype="multipart/form-data">

@@ -254,7 +254,7 @@ Add users icon
 
 .addU img{
 
-  max-width: 110px;
+  max-width: 105px;
   min-width: 65px;
   width: 15vw;
   height: auto;
@@ -285,7 +285,7 @@ Add PS Work icon
 
 .addIM img{
 
-  max-width: 110px;
+  max-width: 105px;
   min-width: 65px;
   width: 15vw;
   height: auto;
@@ -618,7 +618,7 @@ Photoshop Projects
 
 .ps p{
 
-  padding: 4% 4%;
+  padding: 4% 4% 4% 4%;
   display: flex;
   align-items: center;
 
@@ -886,8 +886,6 @@ Other Devices CSS
 
 @media screen and (max-width: 768px){
 
-
-
   .end img{
     min-width: 3rem;
     padding: 2rem;
@@ -997,6 +995,17 @@ Other Devices CSS
   .downArrow{
 
     bottom: 12%;
+
+  }
+
+}
+
+@media screen and (max-height: 840px){
+
+  .addIM{
+
+
+    bottom: 16%;
 
   }
 
