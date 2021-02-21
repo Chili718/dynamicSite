@@ -16,6 +16,8 @@ var rotateFn = isHorizontal ? 'rotateY' : 'rotateX';
 
 var radius, theta;
 
+var lightbox = document.getElementById('lightbox');
+
 function rotateCarousel(){
 
   var angle = theta * selectedIndex * -1;
@@ -26,11 +28,10 @@ function rotateCarousel(){
 ////////////////////////////////////////////////////////////
 var prevButton = document.querySelector('.previous');
 
+var prevN = 0;
+
 prevButton.addEventListener('click', function(){
 
-
-  //move to function maybe?
-  const lightbox = document.getElementById('lightbox');
 
   if(lightbox.classList.contains('active'))
   {
@@ -45,7 +46,8 @@ prevButton.addEventListener('click', function(){
 
         if(cell.firstChild.src === lit)
         {
-          if((i-1) != -1){
+          if((i-1) != -1)
+          {
             node = i-1;
           }else{
             node = cells.length-1;
@@ -71,24 +73,23 @@ prevButton.addEventListener('click', function(){
 
     lightbox.appendChild(splay);
 
-    if(node != 0)
-      selectedIndex = node;
-
-  }else{
-
-    selectedIndex--;
 
   }
 
+    selectedIndex--;
+
+
+  //console.log(selectedIndex + "Prev");
+
   changeCarousel();
+
+  prevN = selectedIndex-1;
 
 });
 //////////////////////////////////////////////////////////////
 var nextButton = document.querySelector('.next');
 
 nextButton.addEventListener('click', function(){
-
-  const lightbox = document.getElementById('lightbox');
 
   if(lightbox.classList.contains('active'))
   {
@@ -129,13 +130,15 @@ nextButton.addEventListener('click', function(){
 
     lightbox.appendChild(splay);
 
-    selectedIndex = node;
-  }
-  else {
-    selectedIndex++;
+
   }
 
+    selectedIndex++;
+
+
   changeCarousel();
+  //console.log(selectedIndex + "Next");
+  prevN = selectedIndex -1;
 
 });
 

@@ -236,11 +236,12 @@
 
        <div class="carousel-options">
 
-         <div class="previous"><img src="images/arrow.png"></div>
-         <div class="next"><img src="images/arrow.png"></div>
+         <div class="previous"><img class ="aRow" src="images/arrow.png"></div>
+         <div class="next"><img class ="aRow" src="images/arrow.png"></div>
 
 
        </div>
+
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt facilisis elementum. Proin tortor lorem, vehicula et libero quis, convallis fermentum nunc. Quisque sed urna sollicitudin, suscipit augue quis, porttitor odio. Maecenas ut elementum lorem. Etiam sagittis ex ante.

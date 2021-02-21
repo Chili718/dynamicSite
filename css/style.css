@@ -922,6 +922,36 @@ Other Devices CSS
 
 }
 
+@media screen and (max-width: 770px){
+
+  .ps p{
+
+    padding-top: 12%;
+
+  }
+
+}
+
+@media screen and (max-width: 600px){
+
+  .ps p{
+
+    padding-top: 16vw;
+
+  }
+
+}
+
+@media screen and (max-width: 550px){
+
+  .ps p{
+
+    padding-top: 24vw;
+
+  }
+
+}
+
 @media screen and (max-width: 472px){
 
   .end h1{
@@ -985,6 +1015,16 @@ Other Devices CSS
   .codeprojects img{
 
     min-width: 16rem;
+
+  }
+
+  .btn{
+
+    padding: 5px 10px;
+
+    font-size: 10px;
+
+    box-shadow: 0 4px rgb(107, 107, 107);
 
   }
 

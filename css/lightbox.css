@@ -47,3 +47,16 @@
 }
 
 .noScroll {margin: 0; height: 100%; overflow: hidden}
+
+@media screen and (max-width: 472px){
+
+  #closeBox{
+
+    width: 40px;
+    height: 40px;
+    top: 5vw;
+    right: 5vw;
+
+  }
+
+}

@@ -96,28 +96,36 @@
 
 .carousel-options{
 
-  z-index: 88;
+  z-index: 3;
   position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  top: 45%;
 }
 
 .carousel-options img{
 
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
   transition: 0.3s ease-in-out;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.0);
+  padding: 6px;
   cursor: pointer;
   border-radius: 5em;
+}
+
+.aRow{
+
+  background-color: rgba(148, 161, 181, 0.6);
+
+}
+
+.aRow:hover{
+
+  transform: scale(1.1);
+
 }
 
 .next, .previous{
 
   position: absolute;
-  bottom: 90px;
 
 }
 
@@ -135,23 +143,7 @@
 }
 
 
-
-.carousel-options img:hover{
-
-  transform: scale(1.1);
-  background-color: rgba(255, 255, 255, 0.4);
-
-}
-
-
 @media screen and (min-width: 1591px){
-
-  .carousel_cell{
-
-    /*max-height: 390px;
-    max-width: 460px;
-    */
-  }
 
 
 
@@ -177,6 +169,7 @@
 
     .carousel_cell:nth-child(9) { transform: rotateY(320deg) translateZ(650px); }
 
+
 }
 
 @media screen and (max-width: 906px) {
@@ -201,7 +194,7 @@
 
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 770px) {
 
   .carousel_cell{
 
@@ -209,5 +202,74 @@
     min-width: 220px;
 
   }
+
+  .carousel_cell:nth-child(1) { transform: rotateY(0deg) translateZ(550px); }
+
+  .carousel_cell:nth-child(2) { transform: rotateY(40deg) translateZ(550px); }
+
+  .carousel_cell:nth-child(3) { transform: rotateY(80deg) translateZ(550px); }
+
+  .carousel_cell:nth-child(4) { transform: rotateY(120deg) translateZ(550px); }
+
+  .carousel_cell:nth-child(5) { transform: rotateY(160deg) translateZ(550px); }
+
+  .carousel_cell:nth-child(6) { transform: rotateY(200deg) translateZ(550px); }
+
+  .carousel_cell:nth-child(7) { transform: rotateY(240deg) translateZ(550px); }
+
+  .carousel_cell:nth-child(8) { transform: rotateY(280deg) translateZ(550px); }
+
+  .carousel_cell:nth-child(9) { transform: rotateY(320deg) translateZ(550px); }
+
+  .carousel{
+
+    transform: translateZ(-588px);
+
+  }
+
+  .scene{
+
+
+    min-width: 250px;
+    padding-top: 50px;
+    padding-bottom: 2vh;
+
+
+  }
+
+}
+
+@media screen and (max-width: 570px) {
+
+
+  .carousel-options img{
+    width: 34px;
+    height: 34px;
+
+  }
+
+  .next{
+
+    left: 32vw;
+
+  }
+
+  .previous{
+
+    right: 32vw;
+  }
+
+
+}
+
+@media screen and (max-width: 510px) {
+
+
+
+}
+
+@media screen and (max-width:390px) {
+
+
 
 }
