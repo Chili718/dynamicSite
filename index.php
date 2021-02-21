@@ -271,6 +271,11 @@
 
       </section>
 
+
+      <div id="lightbox">
+        <img id = "closeBox" src="images/closeLightboxIcon.png">
+      </div>
+
       <script src="carousel.js"></script>
       <script src="lightbox.js"></script>
       <script src="app.js"></script>

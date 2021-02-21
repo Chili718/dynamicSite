@@ -96,7 +96,7 @@
 
 .carousel-options{
 
-  z-index: 1;
+  z-index: 88;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -133,6 +133,8 @@
   right: 38vw;
 
 }
+
+
 
 .carousel-options img:hover{
 

@@ -1,7 +1,7 @@
 #lightbox{
 
   position: fixed;
-  z-index: 100;
+  z-index: 87;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.8);
@@ -23,6 +23,26 @@
   max-width: 85%;
   max-height: 90%;
   object-fit: contain;
+
+}
+
+#closeBox{
+
+  z-index: 101;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  background-color: rgba(57, 59, 57,0.8);
+  border-radius: 5em;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#closeBox:hover{
+
+  transform: scale(1.1);
 
 }
 

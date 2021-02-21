@@ -1,6 +1,8 @@
-const lightbox = document.createElement('div');
-lightbox.id = 'lightbox';
-document.body.appendChild(lightbox);
+const lightbox = document.getElementById('lightbox');
+
+const x = document.getElementById('closeBox');
+//lightbox.id = 'lightbox';
+//document.body.appendChild(lightbox);
 
 const images = document.querySelectorAll('.carousel_cell');
 
@@ -13,9 +15,9 @@ images.forEach(image => {
     const splay = document.createElement('img');
     splay.src = image.firstChild.src;
 
-    while(lightbox.firstChild){
+    while(lightbox.childElementCount >= 2){
 
-      lightbox.removeChild(lightbox.firstChild);
+      lightbox.removeChild(lightbox.lastChild);
 
     }
 
@@ -33,5 +35,16 @@ lightbox.addEventListener('click', e => {
   lightbox.classList.remove('active');
 
   document.body.classList.remove('noScroll');
+
+});
+
+x.addEventListener('click', e => {
+  if(e.target === e.currentTarget){
+
+    lightbox.classList.remove('active');
+
+    document.body.classList.remove('noScroll');
+
+  }
 
 });

@@ -23,22 +23,117 @@ function rotateCarousel(){
   carousel.style.transform = 'translateZ(' + -radius + 'px) ' + rotateFn +'(' + angle + 'deg)';
 
 }
-
+////////////////////////////////////////////////////////////
 var prevButton = document.querySelector('.previous');
 
 prevButton.addEventListener('click', function(){
 
-  selectedIndex--;
+
+  //move to function maybe?
+  const lightbox = document.getElementById('lightbox');
+
+  if(lightbox.classList.contains('active'))
+  {
+
+    var lit = lightbox.lastChild.src;
+
+    var node = 0;
+    var i = 0;
+
+    //look into making this a for loop
+    cells.forEach(cell => {
+
+        if(cell.firstChild.src === lit)
+        {
+          if((i-1) != -1){
+            node = i-1;
+          }else{
+            node = cells.length-1;
+          }
+        }
+        else
+        {
+            i++;
+        }
+
+    });
+
+    lit = cells[node].firstChild.src;
+    //console.log(node);
+    const splay = document.createElement('img');
+    splay.src = lit;
+
+    while(lightbox.childElementCount >= 2){
+
+      lightbox.removeChild(lightbox.lastChild);
+
+    }
+
+    lightbox.appendChild(splay);
+
+    if(node != 0)
+      selectedIndex = node;
+
+  }else{
+
+    selectedIndex--;
+
+  }
 
   changeCarousel();
 
 });
-
+//////////////////////////////////////////////////////////////
 var nextButton = document.querySelector('.next');
 
 nextButton.addEventListener('click', function(){
 
-  selectedIndex++;
+  const lightbox = document.getElementById('lightbox');
+
+  if(lightbox.classList.contains('active'))
+  {
+
+    var lit = lightbox.lastChild.src;
+
+    var node = 0;
+    var i = 0;
+
+    //look into making this a for loop
+    cells.forEach(cell => {
+
+        if(cell.firstChild.src === lit)
+        {
+          if((i+1) > cells.length-1){
+            node = 0;
+          }else{
+            node = i+1;
+          }
+        }
+        else
+        {
+            i++;
+        }
+
+    });
+
+    lit = cells[node].firstChild.src;
+    //console.log(node);
+    const splay = document.createElement('img');
+    splay.src = lit;
+
+    while(lightbox.childElementCount >= 2){
+
+      lightbox.removeChild(lightbox.lastChild);
+
+    }
+
+    lightbox.appendChild(splay);
+
+    selectedIndex = node;
+  }
+  else {
+    selectedIndex++;
+  }
 
   changeCarousel();
 
