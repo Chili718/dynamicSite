@@ -1,4 +1,7 @@
 const x = document.getElementById('closeBox');
+
+var prvs = document.getElementById('prvs');
+var nxt = document.getElementById('nxt');
 //lightbox.id = 'lightbox';
 //document.body.appendChild(lightbox);
 
@@ -26,6 +29,10 @@ images.forEach(image => {
 
     options.style.position = 'fixed';
     options.style.zIndex = '88';
+    //options.style.firstChild.removeProperty('bottom');
+    prvs.classList.add('botm');
+    nxt.classList.add('botm');
+    //options.lastChild.classList.add('botm');
 
 
     var node = 0;
@@ -69,6 +76,8 @@ lightbox.addEventListener('click', e => {
 
   options.style.position = 'relative';
   options.style.zIndex = '3';
+  prvs.classList.remove('botm');
+  nxt.classList.remove('botm');
 
 
 });
@@ -82,6 +91,8 @@ x.addEventListener('click', e => {
 
     options.style.position = 'relative';
     options.style.zIndex = '3';
+    prvs.classList.remove('botm');
+    nxt.classList.remove('botm');
 
   }
 

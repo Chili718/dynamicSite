@@ -612,6 +612,7 @@ Photoshop Projects
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding-bottom: 2em;
 
 }
@@ -924,31 +925,17 @@ Other Devices CSS
 
 @media screen and (max-width: 770px){
 
-  .ps p{
 
-    padding-top: 12%;
-
-  }
 
 }
 
 @media screen and (max-width: 600px){
 
-  .ps p{
-
-    padding-top: 16vw;
-
-  }
 
 }
 
 @media screen and (max-width: 550px){
 
-  .ps p{
-
-    padding-top: 24vw;
-
-  }
 
 }
 

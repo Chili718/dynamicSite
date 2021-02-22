@@ -236,8 +236,8 @@
 
        <div class="carousel-options">
 
-         <div class="previous"><img class ="aRow" src="images/arrow.png"></div>
-         <div class="next"><img class ="aRow" src="images/arrow.png"></div>
+         <div class="previous" id ="prvs"><img src="images/arrow.png"></div>
+         <div class="next" id ="nxt"><img src="images/arrow.png"></div>
 
 
        </div>
