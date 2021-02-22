@@ -982,6 +982,16 @@ Other Devices CSS
 
   }
 
+  .btn{
+
+    padding: 5px 10px;
+
+    font-size: 10px;
+
+    box-shadow: 0 4px rgb(107, 107, 107);
+
+  }
+
 }
 
 @media screen and (max-width: 340px){
@@ -1005,15 +1015,12 @@ Other Devices CSS
 
   }
 
-  .btn{
+  .ps p {
 
-    padding: 5px 10px;
-
-    font-size: 10px;
-
-    box-shadow: 0 4px rgb(107, 107, 107);
+    padding-top: 10vw;
 
   }
+
 
 }
 

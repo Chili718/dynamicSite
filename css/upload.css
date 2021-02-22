@@ -215,3 +215,17 @@ Forms and button css for upload page
   margin-bottom: 3vh;
 
 }
+
+@media screen and (max-width: 472px){
+
+  #insert{
+
+    padding: 8px 14px;
+
+    font-size: 12px;
+
+    box-shadow: 0 4px rgb(107, 107, 107);
+
+  }
+
+}

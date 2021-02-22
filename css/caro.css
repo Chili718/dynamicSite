@@ -127,10 +127,30 @@
 
 }
 
-@media screen and (min-width: 1224px){
+@media screen and (min-width: 1624px){
 
+  .carousel_cell{
 
+    max-width: 520px;
+    max-height: 350px;
+    width: 32vw;
+    height: 35vw;
 
+  }
+
+  .scene{
+
+    height: 30vw;
+    max-height: 320px;
+    max-width: 535px;
+
+  }
+
+  .carousel-options img{
+
+    width: 98px;
+    height: 98px;
+  }
 
 }
 
@@ -139,6 +159,7 @@
   .scene{
 
       height: 25vw;
+
 
   }
 
@@ -162,7 +183,7 @@
 
   .next, .previous{
 
-    bottom: 55px;
+    bottom: 60px;
 
   }
 
@@ -183,24 +204,37 @@
 
 @media screen and (max-width: 675px){
 
-  .carousel_cell:nth-child(1) { transform: rotateY(0deg) translateZ(55vw); }
+  .carousel_cell:nth-child(1) { transform: rotateY(0deg) translateZ(75vw); }
 
-  .carousel_cell:nth-child(2) { transform: rotateY(40deg) translateZ(55vw); }
+  .carousel_cell:nth-child(2) { transform: rotateY(40deg) translateZ(75vw); }
 
-  .carousel_cell:nth-child(3) { transform: rotateY(80deg) translateZ(55vw); }
+  .carousel_cell:nth-child(3) { transform: rotateY(80deg) translateZ(75vw); }
 
-  .carousel_cell:nth-child(4) { transform: rotateY(120deg) translateZ(55vw); }
+  .carousel_cell:nth-child(4) { transform: rotateY(120deg) translateZ(75vw); }
 
-  .carousel_cell:nth-child(5) { transform: rotateY(160deg) translateZ(55vw); }
+  .carousel_cell:nth-child(5) { transform: rotateY(160deg) translateZ(75vw); }
 
-  .carousel_cell:nth-child(6) { transform: rotateY(200deg) translateZ(55vw); }
+  .carousel_cell:nth-child(6) { transform: rotateY(200deg) translateZ(75vw); }
 
-  .carousel_cell:nth-child(7) { transform: rotateY(240deg) translateZ(55vw); }
+  .carousel_cell:nth-child(7) { transform: rotateY(240deg) translateZ(75vw); }
 
-  .carousel_cell:nth-child(8) { transform: rotateY(280deg) translateZ(55vw); }
+  .carousel_cell:nth-child(8) { transform: rotateY(280deg) translateZ(75vw); }
 
-  .carousel_cell:nth-child(9) { transform: rotateY(320deg) translateZ(55vw); }
+  .carousel_cell:nth-child(9) { transform: rotateY(320deg) translateZ(75vw); }
 
+  .scene{
+
+    height: 30vw;
+    width: 245px;
+    padding-top: 25px;
+
+  }
+
+  .carousel_cell img{
+
+    max-width: 70vw;
+
+  }
 }
 
 @media screen and (max-width: 570px) {
@@ -225,7 +259,7 @@
 
   .next, .previous{
 
-    bottom: 45px;
+    bottom: 50px;
 
   }
 
@@ -234,15 +268,63 @@
 
 @media screen and (max-width: 510px) {
 
+  .scene{
 
+    height: 33vw;
+    width: 230px;
+
+  }
 
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:425px) {
 
+  .scene{
 
+    height: 40vw;
+    width: 245px;
+
+  }
+
+  .next, .previous{
+
+    bottom: 60px;
+
+  }
+
+  .carousel_cell:nth-child(1) { transform: rotateY(0deg) translateZ(95vw);  }
+
+  .carousel_cell:nth-child(2) { transform: rotateY(40deg) translateZ(95vw); }
+
+  .carousel_cell:nth-child(3) { transform: rotateY(80deg) translateZ(95vw); }
+
+  .carousel_cell:nth-child(4) { transform: rotateY(120deg) translateZ(95vw); }
+
+  .carousel_cell:nth-child(5) { transform: rotateY(160deg) translateZ(95vw); }
+
+  .carousel_cell:nth-child(6) { transform: rotateY(200deg) translateZ(95vw); }
+
+  .carousel_cell:nth-child(7) { transform: rotateY(240deg) translateZ(95vw); }
+
+  .carousel_cell:nth-child(8) { transform: rotateY(280deg) translateZ(95vw); }
+
+  .carousel_cell:nth-child(9) { transform: rotateY(320deg) translateZ(95vw); }
 
 }
+
+@media screen and (max-width:375px) {
+
+
+  .scene{
+
+    height: 45vw;
+    width: 240px;
+    perspective: 240vw;
+
+  }
+
+}
+
 /*this is here for presidence over the other bottom media queries*/
 .botm{
 

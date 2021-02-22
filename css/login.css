@@ -73,3 +73,17 @@ Forms and button css for login page
   transform: translateY(4px);
 
 }
+
+@media screen and (max-width: 472px){
+
+  .btn{
+
+    padding: 8px 14px;
+
+    font-size: 12px;
+
+    box-shadow: 0 4px rgb(107, 107, 107);
+
+  }
+
+}
