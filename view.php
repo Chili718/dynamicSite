@@ -15,7 +15,7 @@ session_start();
 
   <link rel="icon" href="images/icon.ico">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/caro.css">
+  <link rel="stylesheet" href="css/view.css">
   <!-- Front I use from Adobe -->
   <script src="https://use.typekit.net/efv3afb.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -102,9 +102,14 @@ session_start();
   }
 
   ?>
+  <div class="grid">
+    <?php
 
+      require "php/view.php";
+      echo $pics;
 
-
+     ?>
+  </div>
 
  <script src="app.js"></script>
 </body>

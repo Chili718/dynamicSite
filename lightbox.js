@@ -34,27 +34,16 @@ images.forEach(image => {
     nxt.classList.add('botm');
     //options.lastChild.classList.add('botm');
 
-
     var node = 0;
-    var i = 0;
 
-    cells.forEach(cell => {
+    for (var i = 0; i < cells.length; i++) {
+      if(cells[i].firstChild.src === splay.src)
+      {
+          node = i;
+          break;
+      }
+    }
 
-        if(cell.firstChild.src === splay.src)
-        {
-          if((i-1) != -1)
-          {
-            node = i;
-          }else{
-            node = cells.length;
-          }
-        }
-        else
-        {
-            i++;
-        }
-
-    });
 
     selectedIndex = node;
 

@@ -28,8 +28,6 @@ function rotateCarousel(){
 ////////////////////////////////////////////////////////////
 var prevButton = document.querySelector('.previous');
 
-var prevN = 0;
-
 prevButton.addEventListener('click', function(){
 
 
@@ -39,26 +37,19 @@ prevButton.addEventListener('click', function(){
     var lit = lightbox.lastChild.src;
 
     var node = 0;
-    var i = 0;
 
-    //look into making this a for loop
-    cells.forEach(cell => {
-
-        if(cell.firstChild.src === lit)
+    for (var i = 0; i < cells.length; i++) {
+      if(cells[i].firstChild.src === lit)
+      {
+        if((i-1) != -1)
         {
-          if((i-1) != -1)
-          {
-            node = i-1;
-          }else{
-            node = cells.length-1;
-          }
+          node = i-1;
+        }else{
+          node = cells.length-1;
         }
-        else
-        {
-            i++;
-        }
-
-    });
+        break;
+      }
+    }
 
     lit = cells[node].firstChild.src;
     //console.log(node);
@@ -83,8 +74,6 @@ prevButton.addEventListener('click', function(){
 
   changeCarousel();
 
-  prevN = selectedIndex-1;
-
 });
 //////////////////////////////////////////////////////////////
 var nextButton = document.querySelector('.next');
@@ -97,25 +86,18 @@ nextButton.addEventListener('click', function(){
     var lit = lightbox.lastChild.src;
 
     var node = 0;
-    var i = 0;
-
-    //look into making this a for loop
-    cells.forEach(cell => {
-
-        if(cell.firstChild.src === lit)
-        {
-          if((i+1) > cells.length-1){
-            node = 0;
-          }else{
-            node = i+1;
-          }
+    
+    for (var i = 0; i < cells.length; i++) {
+      if(cells[i].firstChild.src === lit)
+      {
+        if((i+1) > cells.length-1){
+          node = 0;
+        }else{
+          node = i+1;
         }
-        else
-        {
-            i++;
-        }
-
-    });
+        break;
+      }
+    }
 
     lit = cells[node].firstChild.src;
     //console.log(node);
@@ -138,7 +120,6 @@ nextButton.addEventListener('click', function(){
 
   changeCarousel();
   //console.log(selectedIndex + "Next");
-  prevN = selectedIndex -1;
 
 });
 

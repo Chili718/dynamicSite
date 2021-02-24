@@ -1,6 +1,6 @@
 <?php
 
- require "php/dbCON.php";
+ require "dbCON.php";
 
  $pics="";
 
@@ -17,7 +17,7 @@
 
      //print_r($data);
 
-     echo "<div class = 'carousel_cell'><img src = '{$data['path']}'></div>";
+     echo "<div class = 'carousel_cell'><img src = '{$data['path']}' class='cil'></div>";
 
    }
 
