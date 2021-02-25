@@ -1,6 +1,6 @@
 .grid{
   position: relative;
-  top: 10vh;
+  top: 11vh;
   display: grid;
   padding-left: 15px;
   padding-right: 15px;
@@ -59,9 +59,43 @@
 
 }
 
+.viewTitle{
+
+  position: absolute;
+  top: 10px;
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/0.8);
+  color: white;
+  text-decoration: underline white 3px;
+
+
+}
+
+#deleteBtn{
+
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 1vw;
+  right: 1vw;
+  background-color: rgba(57, 59, 57,0.8);
+  border-radius: 5em;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#deleteBtn:hover{
+
+  transform: scale(1.1);
+
+}
+
 @media screen and (min-width: 1445px){
 
-  .grid h2{
+  .grid h2, .viewTitle{
 
     font-size: 40px;
 
@@ -71,9 +105,28 @@
 
 @media screen and (max-width: 645px){
 
-  .grid h2{
+  .grid h2, .viewTitle{
 
     font-size: 30px;
+
+  }
+
+  .viewTitle{
+
+    top: 8vh;
+
+  }
+
+}
+
+@media screen and (max-width: 472px){
+
+  #deleteBtn{
+
+    width: 40px;
+    height: 40px;
+    bottom: 5vw;
+    right: 5vw;
 
   }
 

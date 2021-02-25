@@ -17,7 +17,7 @@ else
 
     //print_r($data);
 
-    echo "<div><h2>".$data["name"]."</h2><img src = ".$data["path"]."></div>";
+    echo "<div><h2>".$data["name"]."</h2><img class='psW' src = ".$data["path"]."></div>";
     //echo "<div><img src = ".$data["path"]."><h2>".$data["name"]."</h2></div>";
   }
 

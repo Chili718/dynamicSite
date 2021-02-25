@@ -11,7 +11,7 @@ var options = document.querySelector('.carousel-options');
 //console.log(images);
 
 images.forEach(image => {
-  var s = 0;
+
   image.firstChild.addEventListener('click',  e => {
     lightbox.classList.add('active');
     const splay = document.createElement('img');
@@ -52,7 +52,6 @@ images.forEach(image => {
     changeCarousel();
 
   });
-  s++;
 
 });
 

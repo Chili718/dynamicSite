@@ -16,6 +16,7 @@ session_start();
   <link rel="icon" href="images/icon.ico">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/view.css">
+  <link rel="stylesheet" href="css/lightbox.css">
   <!-- Front I use from Adobe -->
   <script src="https://use.typekit.net/efv3afb.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -102,6 +103,9 @@ session_start();
   }
 
   ?>
+
+  <h3 id="validateTXT"></h3>
+
   <div class="grid">
     <?php
 
@@ -111,6 +115,22 @@ session_start();
      ?>
   </div>
 
+  <div id="lightbox">
+    <img id="closeBox" src="images/closeLightboxIcon.png">
+    <?php
+
+    if(isset($_SESSION['verified']))
+    {
+
+      echo "<img id='deleteBtn' src='images/deleteIcon.png' onclick='deleteIm()'>";
+
+
+    }
+
+    ?>
+  </div>
+
+  <script src="viewLightbox.js"></script>
  <script src="app.js"></script>
 </body>
 
