@@ -229,9 +229,7 @@
        <div class="scene">
          <div class="carousel">
 
-             <?php require "php/gp.php";
-                    echo $pics;
-             ?>
+             <?php require "php/gp.php";?>
 
          </div>
        </div>

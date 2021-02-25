@@ -2,10 +2,9 @@
 
  require "dbCON.php";
 
- $pics="";
 
  if (!$con) {
-   $pics = "<h2>Oops might be the internet or me!</h2>";
+   echo "<h2>Oops might be the internet or me!</h2>";
  }
  else
  {
@@ -13,16 +12,24 @@
    $table  = "photoshopwork";
    $result = $con->query("SELECT * FROM $table ORDER BY RAND() LIMIT 9");
 
-   while($data = $result->fetch_assoc()){
+   if (mysqli_num_rows($result)!=0) {
 
-     //print_r($data);
+     while($data = $result->fetch_assoc()){
 
-     echo "<div class = 'carousel_cell'><img src = '{$data['path']}' class='cil'></div>";
+       //print_r($data);
+
+       echo "<div class = 'carousel_cell'><img src = '{$data['path']}' class='cil'></div>";
+
+     }
+
+   }else{
+
+     echo "<h2>Looks like there are no images!</h2>";
 
    }
 
- }
+   $con->close();
 
- $con->close();
+ }
 
  ?>

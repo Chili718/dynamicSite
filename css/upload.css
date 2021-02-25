@@ -124,21 +124,6 @@ Forms and button css for upload page
     cursor: pointer;
 }
 
-#image:hover{
-
-  opacity: 0.8;
-
-}
-/*
-#image + label:hover {
-    background-color: white;
-}
-
-#image + label {
-	cursor: pointer; "hand" cursor
-}
-*/
-
 #insert{
   outline: 0;
   background-color: rgba(255, 255, 255);
@@ -158,12 +143,6 @@ Forms and button css for upload page
   cursor: pointer;
   box-shadow: 0 8px rgb(107, 107, 107);
   border-radius: 2em;
-
-}
-
-#insert:hover{
-
-  opacity: 0.8;
 
 }
 
@@ -225,6 +204,32 @@ Forms and button css for upload page
     font-size: 12px;
 
     box-shadow: 0 4px rgb(107, 107, 107);
+
+  }
+
+}
+
+@media (hover:hover) and (pointer: fine){
+
+  #image:hover{
+
+    opacity: 0.8;
+
+  }
+  /*
+  #image + label:hover {
+      background-color: white;
+  }
+
+  #image + label {
+  	cursor: pointer; "hand" cursor
+  }
+  */
+
+
+  #insert:hover{
+
+    opacity: 0.8;
 
   }
 

@@ -51,7 +51,7 @@ if(isset($_POST['insert']))
   }
   else {
 
-    $stmtB = "<h3 id='change'>Image Could Not Be Uploaded!</h3>";
+    $stmtB = "<h3 id='change'>Image and or name already exists!</h3>";
     $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 3000);</script>";
 
   }

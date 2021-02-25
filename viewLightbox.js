@@ -1,41 +1,79 @@
-var images = document.querySelectorAll(".psW");
-
 var lightbox = document.getElementById('lightbox');
 
 const x = document.getElementById('closeBox');
 
-//console.log(images);
+var previous = document.getElementById("viewPrevious");
 
-images.forEach(image => {
+var next = document.getElementById("viewNext");
 
-  image.addEventListener('click', e => {
+var boxes = document.querySelector(".grid").children;
 
-    //must clone node or else when we remove the child on close it will remove
-    //the actual sibling node
-    var title = image.previousSibling.cloneNode(true);//.textContent;
+previous.addEventListener('click', function(){
 
-    lightbox.classList.add('active');
 
-    const splay = document.createElement('img');
-    splay.src = image.src;
+    var lit = lightbox.lastChild.src;
 
-    while(lightbox.childElementCount >= 4){
+    var node = 0;
 
-      lightbox.removeChild(lightbox.lastChild);
-      lightbox.removeChild(lightbox.lastChild);
-
+    for (var i = 0; i < boxes.length; i++) {
+      if(boxes[i].lastChild.src === lit)
+      {
+        if((i-1) != -1)
+        {
+          node = i-1;
+        }else{
+          node = boxes.length-1;
+        }
+        break;
+      }
     }
 
-    title.classList.add('viewTitle');
+    boxes[node].scrollIntoView();
+    //change the images title
+    lightbox.lastChild.previousSibling.innerHTML = boxes[node].firstChild.innerHTML;
 
-    lightbox.appendChild(title);
+    lit = boxes[node].lastChild.src;
+    //console.log(node);
+    const splay = document.createElement('img');
+    splay.src = lit;
+
+    lightbox.removeChild(lightbox.lastChild);
 
     lightbox.appendChild(splay);
 
-    document.body.classList.add('noScroll');
+});
 
+next.addEventListener('click', function(){
 
-  });
+    var lit = lightbox.lastChild.src;
+
+    var node = 0;
+
+    for (var i = 0; i < boxes.length; i++) {
+      if(boxes[i].lastChild.src === lit)
+      {
+        if((i+1) > boxes.length-1){
+          node = 0;
+        }else{
+          node = i+1;
+        }
+        break;
+      }
+    }
+
+    boxes[node].scrollIntoView();
+    //change the images title
+    lightbox.lastChild.previousSibling.innerHTML = boxes[node].firstChild.innerHTML;
+
+    lit = boxes[node].lastChild.src;
+
+    const splay = document.createElement('img');
+    splay.src = lit;
+
+    lightbox.removeChild(lightbox.lastChild);
+
+    lightbox.appendChild(splay);
+
 
 });
 
@@ -65,27 +103,93 @@ function deleteIm(){
 
   //var xhr = new XMLHttpRequest();
   var data = lightbox.lastChild.src;
-  console.log(data);
-  /*
-  xhr.open("POST", "php/delete.php", true);
-  xhr.addEventListener("readystatechange", function(){
-    if (xhr.readyState === 4 && xhr.status === 200){
-      //alert(xhr.responseText);
-      if (xhr.responseText === "true") {
-        window.location = "view.php";
-      }else {
-        if (xhr.responseText === "DBF") {
-          document.getElementById('validateTXT').innerHTML = 'Looks like its the internet, or me though.';
-        }else{
-          document.getElementById('validateTXT').innerHTML = 'Record does not exist';
+
+  var path = data.substring(data.lastIndexOf("photoshopWork"), data.length);
+
+  //console.log(path);
+
+  $.ajax({
+
+    url:'php/delete.php',
+    type:'post',
+    data:{
+      path: path
+    },
+    success:function(php_result){
+
+      alert(php_result);
+
+      lightbox.classList.remove('active');
+      document.body.classList.remove('noScroll');
+
+      document.querySelector('.grid').innerHTML = "";
+
+      $.get( "php/view.php", function( data ) {
+          $('.grid').html(data);
+
+          addLB();
+      });
+
+    },
+    error: function(xhr){
+
+      console.log(xhr.responseText);
+
+    }
+
+  });
+
+}
+
+function addLB(){
+  var images = document.querySelectorAll(".psW");
+
+  images.forEach(image => {
+
+    image.addEventListener('click', e => {
+
+      //must clone node or else when we remove the child on close it will remove
+      //the actual sibling node
+      var title = image.previousSibling.cloneNode(true);//.textContent;
+
+      lightbox.classList.add('active');
+
+      const splay = document.createElement('img');
+      splay.src = image.src;
+
+
+
+      if(lightbox.contains(document.getElementById('deleteBtn'))){
+
+        while(lightbox.childElementCount >= 6){
+
+          lightbox.removeChild(lightbox.lastChild);
+          lightbox.removeChild(lightbox.lastChild);
+
         }
 
-        setTimeout(function(){
-          document.getElementById('validateTXT').innerHTML = '';
-        }, 4000);
+      }else {
+        while(lightbox.childElementCount >= 5){
+
+          lightbox.removeChild(lightbox.lastChild);
+          lightbox.removeChild(lightbox.lastChild);
+
+        }
       }
-    }
+
+      title.classList.add('viewTitle');
+
+      lightbox.appendChild(title);
+
+      lightbox.appendChild(splay);
+
+      document.body.classList.add('noScroll');
+
+
+    });
+
   });
-  xhr.send(data);
-  */
+
 }
+
+addLB();

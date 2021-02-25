@@ -110,7 +110,6 @@ session_start();
     <?php
 
       require "php/view.php";
-      echo $pics;
 
      ?>
   </div>
@@ -128,6 +127,8 @@ session_start();
     }
 
     ?>
+    <div id="viewPrevious"><img src="images/arrow.png"></div>
+    <div id="viewNext"><img src="images/arrow.png"></div>
   </div>
 
   <script src="viewLightbox.js"></script>

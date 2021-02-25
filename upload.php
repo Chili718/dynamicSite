@@ -45,7 +45,7 @@
       <ul class="nav-links" id="check">
         <li><a href="index.php#home">Home</a></li>
         <li><a href="index.php#projects">Projects</a></li>
-        <li><a href="index.php#photoshop">Photoshop Work</a></li>
+        <li><a href="view.php">Photoshop Work</a></li>
         <li><a href="index.php#contact">Contact</a></li>
         <li><a href="">Resume</a></li>
         <?php

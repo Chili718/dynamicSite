@@ -60,12 +60,6 @@ Forms and button css for login page
 
 }
 
-.btn:hover{
-
-  opacity: 0.8;
-
-}
-
 .btn:active{
 
   background-color: rgb(20, 115, 18);
@@ -83,6 +77,16 @@ Forms and button css for login page
     font-size: 12px;
 
     box-shadow: 0 4px rgb(107, 107, 107);
+
+  }
+
+}
+
+@media (hover:hover) and (pointer: fine){
+
+  .btn:hover{
+
+    opacity: 0.8;
 
   }
 
