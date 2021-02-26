@@ -8,6 +8,8 @@ var next = document.getElementById("viewNext");
 
 var boxes = document.querySelector(".grid").children;
 
+var lastVal = "";
+
 previous.addEventListener('click', function(){
 
 
@@ -143,45 +145,54 @@ function deleteIm(){
 
 function updateIM(){
 
-  console.log("YES");
-
   var data = lightbox.lastChild.src;
 
   var path = data.substring(data.lastIndexOf("photoshopWork"), data.length);
 
   var name = lightbox.lastChild.previousSibling.innerHTML;
 
-  $.ajax({
+  if(name != lastVal){
 
-    url:'php/update.php',
-    type:'post',
-    data:{
-      path: path,
-      name: name
-    },
-    success:function(php_result){
+    $.ajax({
 
-      alert(php_result);
-      /*
-      lightbox.classList.remove('active');
-      document.body.classList.remove('noScroll');
+      url:'php/update.php',
+      type:'post',
+      data:{
+        path: path,
+        name: name
+      },
+      success:function(php_result){
 
-      document.querySelector('.grid').innerHTML = "";
+        alert(php_result);
+        /*
+        lightbox.classList.remove('active');
+        document.body.classList.remove('noScroll');
+        */
+        document.querySelector('.grid').innerHTML = "";
 
-      $.get( "php/view.php", function( data ) {
-          $('.grid').html(data);
+        $.get( "php/view.php", function( data ) {
+            $('.grid').html(data);
 
-          addLB();
-      });
-      */
-    },
-    error: function(xhr){
+            addLB();
+        });
+      },
+      error: function(xhr){
 
-      console.log(xhr.responseText);
+        console.log(xhr.responseText);
 
-    }
+      }
 
-  });
+    });
+
+  }
+
+}
+
+function checkChange(){
+
+  lastVal = lightbox.lastChild.previousSibling.innerHTML;
+
+  //console.log(lastVal);
 
 }
 
@@ -213,7 +224,9 @@ function addLB(){
         }
 
         title.contentEditable = 'true';
-        title.onblur = updateIM();
+        title.addEventListener("focus", checkChange);
+        //title.addEventListener("blur", updateIM);
+        title.addEventListener("blur", updateIM);
 
       }else {
         while(lightbox.childElementCount >= 5){
