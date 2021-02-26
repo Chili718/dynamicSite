@@ -141,6 +141,50 @@ function deleteIm(){
 
 }
 
+function updateIM(){
+
+  console.log("YES");
+
+  var data = lightbox.lastChild.src;
+
+  var path = data.substring(data.lastIndexOf("photoshopWork"), data.length);
+
+  var name = lightbox.lastChild.previousSibling.innerHTML;
+
+  $.ajax({
+
+    url:'php/update.php',
+    type:'post',
+    data:{
+      path: path,
+      name: name
+    },
+    success:function(php_result){
+
+      alert(php_result);
+      /*
+      lightbox.classList.remove('active');
+      document.body.classList.remove('noScroll');
+
+      document.querySelector('.grid').innerHTML = "";
+
+      $.get( "php/view.php", function( data ) {
+          $('.grid').html(data);
+
+          addLB();
+      });
+      */
+    },
+    error: function(xhr){
+
+      console.log(xhr.responseText);
+
+    }
+
+  });
+
+}
+
 function addLB(){
   var images = document.querySelectorAll(".psW");
 
@@ -168,6 +212,9 @@ function addLB(){
 
         }
 
+        title.contentEditable = 'true';
+        title.onblur = updateIM();
+
       }else {
         while(lightbox.childElementCount >= 5){
 
@@ -178,6 +225,7 @@ function addLB(){
       }
 
       title.classList.add('viewTitle');
+
 
       lightbox.appendChild(title);
 
