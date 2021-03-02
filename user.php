@@ -152,7 +152,7 @@ require 'php/user.php';
 
         setTimeout(function(){
           document.getElementById('validateTXT').innerHTML = '';
-        }, 3000);
+        }, 5000);
 
         return false;
 
@@ -164,7 +164,7 @@ require 'php/user.php';
 
         setTimeout(function(){
           document.getElementById('validateTXT').innerHTML = '';
-        }, 3000);
+        }, 5000);
 
         return false;
 
@@ -176,7 +176,7 @@ require 'php/user.php';
 
         setTimeout(function(){
           document.getElementById('validateTXT').innerHTML = '';
-        }, 3000);
+        }, 5000);
 
         return false;
 
@@ -189,10 +189,13 @@ require 'php/user.php';
 
         setTimeout(function(){
           document.getElementById('validateTXT').innerHTML = '';
-        }, 3000);
+        }, 5000);
 
         return false;
 
+
+      }
+      else if () {
 
       }
 

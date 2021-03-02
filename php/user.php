@@ -19,8 +19,7 @@ if (!$con) {
   echo '<script>alert("Could not connect to db, whoops!")</script>';
   die("<script>window.location = 'index.php';</script>");
 }
-
-if(isset($_POST['insert']))
+else if(isset($_POST['insert']))
 {
 
   //next 5 variables are being stored in db
@@ -49,16 +48,25 @@ if(isset($_POST['insert']))
   $sql->bind_param("sssssii", $un, $p, $e, $slt, $vk, $i, $t);
 
   if($sql->execute()){
+    /*
+    $to = $e;
+    $subject = "Email Verification";
+    $message = "<a href='https://jonticedesigns.com/login.php?vkey=$vk'>Register Account</a>";
+    $header = "From: tice@jonticedesigns.com \r\n ";
+    $header .= "MIME-Version: 1.0" . "\r\n";
+    $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-    $cmplt = "<h2 id='change'>User Added Successfully!</h2>";
-    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 4000);</script>";
+    mail($to, $subject, $message, $header);
+    */
+    $cmplt = "<h2 id='change'>User Added Successfully, an email was sent to verify their account!</h2>";
+    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 5000);</script>";
 
   }
   else
   {
 
     $rmsg = "<h3 id='change'>Existing Username or Email</h3>";
-    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 4000);</script>";
+    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 5000);</script>";
 
   }
 

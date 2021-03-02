@@ -10,15 +10,22 @@ function login(){
       if (xhr.responseText === "true") {
         window.location = "index.php";
       }else {
-        if (xhr.responseText === "DBF") {
+        if(xhr.responseText === "notVer")
+        {
+          document.getElementById('validateTXT').innerHTML = 'You must verify your account before you can login, please check your email.';
+        }
+        else if (xhr.responseText === "DBF")
+        {
           document.getElementById('validateTXT').innerHTML = 'Looks like its the internet, or me though.';
-        }else{
+        }
+        else
+        {
           document.getElementById('validateTXT').innerHTML = 'Invalid Username or Password';
         }
 
         setTimeout(function(){
           document.getElementById('validateTXT').innerHTML = '';
-        }, 4000);
+        }, 5000);
       }
     }
   });

@@ -1,10 +1,18 @@
 <?php
 session_start();
+
+$ver = "";
+$dbf = "";
+$close = "";
 //print_r($_SESSION);
 if(isset($_SESSION['verified']))
 {
   header("Location: index.php");
   die();
+
+}else if(isset($_GET['vkey'])){
+
+  require 'php/verify.php';
 
 }
 
@@ -85,15 +93,16 @@ if(isset($_SESSION['verified']))
     -->
     <form class="frm" onsubmit="login(); return false">
       <h1>Login</h1>
-      <h3 id="validateTXT"></h3>
+      <h3 id="validateTXT"><?php echo $dbf; ?></h3>
+      <h3 id='ver'><?php echo $ver; echo $close; ?></h3>
       <div class="hline">
       <div class="labl">
       <label id="pad">Username: </label>
       <label>Password: </label>
       </div>
       <div class="txt">
-      <input type="text" name="userNME" placeholder="Username..."/>
-      <input type="password" name="pswrd" placeholder="Password..."/>
+      <input type="text" name="userNME"/>
+      <input type="password" name="pswrd"/>
       </div>
       </div>
       <div class="sub">
