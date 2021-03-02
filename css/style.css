@@ -85,8 +85,7 @@ Preloader
 
 .loadStuff img{
 
-  max-width: 200px;
-  min-width: 200px;
+
   width: 25vw;
   height: auto;
 
@@ -490,6 +489,22 @@ Code Projects
 .container{
   position: relative;
   padding-bottom: 2%;
+}
+
+/*I want what the hover does on touch modile in this instance*/
+.container:hover img{
+
+  opacity: 0.3;
+  transition: 0.5s ease-in-out;
+
+}
+
+.container:hover a{
+
+  color: rgba(255,255,255,1);
+  visibility: visible;
+  transition: 0.5s ease-in-out;
+
 }
 
 .org{
@@ -995,21 +1010,6 @@ Other Devices CSS
   .addIM:hover{
 
     transform: scale(1.1);
-
-  }
-
-  .container:hover img{
-
-    opacity: 0.3;
-    transition: 0.5s ease-in-out;
-
-  }
-
-  .container:hover a{
-
-    color: rgba(255,255,255,1);
-    visibility: visible;
-    transition: 0.5s ease-in-out;
 
   }
 

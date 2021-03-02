@@ -1,3 +1,8 @@
+<?php
+
+  session_start();
+
+ ?>
 <!DOCTYPE html>
 <html>
 
@@ -109,9 +114,6 @@
           <li><a href="">Resume</a></li>
 
           <?php
-            session_start();
-
-            //require 'timeO.php';
 
             if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
             {
