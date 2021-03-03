@@ -49,11 +49,11 @@
       $(".parallax").css({
         "height": wh*0.7
       });
-
+      /*
       $(".image-text").css({
         "padding-top": Math.round((wh*0.7)/2.5)
       });
-
+      */
     });
 
     //change opacity of the header background on scroll
@@ -79,10 +79,11 @@
       $(".parallax").css({
         "height": $(window).height()*0.7
       });
+      /*
       $(".image-text").css({
         "padding-top": Math.round(($(window).height()*0.7)/2.5)
       });
-
+      */
     });
 
   </script>
@@ -107,7 +108,6 @@
     <div class="navbar">
         <a class="miglink" href="#home"><img class="navbar-image" src="images/logo.png"></a>
         <ul class="nav-links" id="check">
-          <li><a href="#home">Home</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#photoshop">Photoshop Work</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -189,11 +189,19 @@
 
     </section>
 
+    <section class="freelanceWork">
+
+      <h1>Freelance Work</h1>
+
+    </section>
+    <!--
       <div id="projects" class="parallax" data-parallax="scroll" data-z-index="0" data-image-src="images/first.jpg" data-natural-width="5760" data-natural-height="3840">
           <p class="image-text">Projects</p>
       </div>
+    -->
+     <section class="codeprojects" id="projects">
 
-     <section class="codeprojects">
+       <h1>Coding Projects</h1>
 
        <div>
          <h1>Sorting Algorithm Visualizer</h1>
@@ -221,12 +229,14 @@
        </div>
 
       </section>
-
+      <!--
       <div id="photoshop" class="parallax" data-parallax="scroll" data-z-index="0" data-image-src="images/second.jpg" data-natural-width="1421" data-natural-height="908">
           <p class="image-text">Photoshop Work</p>
       </div>
+    -->
+     <section class="ps" id="photoshop">
 
-     <section class="ps">
+       <h1>Photoshop Work</h3>
 
        <div class="scene">
          <div class="carousel">
@@ -254,7 +264,10 @@
       </section>
 
       <div id="contact" class="parallax" data-parallax="scroll" data-z-index="0" data-image-src="images/third.jpg" data-natural-width="3855" data-natural-height="3198">
-          <p class="image-text">Contact Me</p>
+          <p class="image-text">
+            <!--<img src="images/circle.png" alt="">-->
+            Contact Me
+          </p>
       </div>
 
      <section class="end">

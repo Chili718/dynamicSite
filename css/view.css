@@ -1,11 +1,11 @@
+
 .grid{
+  display: grid;
   position: relative;
   top: 11vh;
-  display: grid;
-  padding-left: 15px;
-  padding-right: 15px;
+  justify-content: center;
   padding-bottom: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
   grid-gap: 1rem;
 
 }
@@ -123,6 +123,12 @@
 
     width: 98px;
     height: 98px;
+
+  }
+
+  .grid{
+
+    grid-template-columns: repeat(5, minmax(300px, 300px));
 
   }
 

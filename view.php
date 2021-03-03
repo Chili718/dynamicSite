@@ -64,7 +64,6 @@ session_start();
   <div class="navbar">
       <a class="miglink" href="index.php#home"><img class="navbar-image" src="images/logo.png"></a>
       <ul class="nav-links" id="check">
-        <li><a href="index.php#home">Home</a></li>
         <li><a href="index.php#projects">Projects</a></li>
         <li><a href="index.php#photoshop">Photoshop Work</a></li>
         <li><a href="index.php#contact">Contact</a></li>
@@ -104,15 +103,17 @@ session_start();
 
   ?>
 
-  <h3 id="validateTXT"></h3>
+  <div class="contain">
+    <div class="grid">
+      <?php
 
-  <div class="grid">
-    <?php
+        require "php/view.php";
 
-      require "php/view.php";
-
-     ?>
+       ?>
+    </div>
   </div>
+
+  <h3 id="validateTXT"></h3>
 
   <div id="lightbox">
     <img id="closeBox" src="images/closeLightboxIcon.png">

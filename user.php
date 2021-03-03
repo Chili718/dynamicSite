@@ -55,7 +55,6 @@ require 'php/user.php';
   <div class="navbar">
       <a class="miglink" href="index.php#home"><img class="navbar-image" src="images/logo.png"></a>
       <ul class="nav-links" id="check">
-        <li><a href="index.php#home">Home</a></li>
         <li><a href="index.php#projects">Projects</a></li>
         <li><a href="index.php#photoshop">Photoshop Work</a></li>
         <li><a href="index.php#contact">Contact</a></li>
@@ -113,10 +112,10 @@ require 'php/user.php';
 
       </div>
       <div class="txt">
-      <input type="text" name="userNME" id="userNME" placeholder="Username..."/>
-      <input type="password" name="pswrd" id="pswrd" placeholder="Password..."/>
-      <input type="password" name="pswrdR" id="pswrdR" placeholder="Repeat Password..."/>
-      <input type="email" name="email" id="email" placeholder="Email..."/>
+      <input type="text" name="userNME" id="userNME"/>
+      <input type="password" name="pswrd" id="pswrd"/>
+      <input type="password" name="pswrdR" id="pswrdR"/>
+      <input type="email" name="email" id="email"/>
       </div>
       </div>
       <?php
@@ -193,9 +192,6 @@ require 'php/user.php';
 
         return false;
 
-
-      }
-      else if () {
 
       }
 

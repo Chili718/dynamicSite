@@ -308,10 +308,8 @@ svg{
   font-style: normal;
   font-size: 85px;
   z-index: 1;
-  position: relative;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding-top: 100px;
   letter-spacing: 0.1em;
   text-shadow: 2px 2px rgba(0, 0, 0, 1);
   word-wrap: break-word;
@@ -629,6 +627,25 @@ Photoshop Projects
 /**************************************************************************
 End (Footer kind of)
 **************************************************************************/
+#contact img{
+
+  object-fit:  contain;
+  position: absolute;
+  width: 100vw;
+  height: inherit;
+
+
+}
+#contact p{
+
+  position: relative;
+  overflow: hidden;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 
 .end{
 
@@ -800,6 +817,7 @@ Other Devices CSS
 .about{
 
   flex-direction: column;
+  padding-bottom: 4em;
 
 
 }
@@ -814,6 +832,7 @@ Other Devices CSS
 
 .picofme{
 
+  padding-top: 4%;
   padding-bottom: 4%;
 
 
@@ -821,7 +840,6 @@ Other Devices CSS
 
 .codeprojects{
   flex-direction: column;
-    padding: 2% 2%;
 }
 
 .codeprojects div{

@@ -117,27 +117,34 @@
 
 @media screen and (min-width: 1624px){
 
-  .carousel_cell{
+  .carousel_cell:nth-child(1) { transform: rotateY(0deg) translateZ(850px); }
 
-    max-width: 520px;
-    max-height: 350px;
-    width: 32vw;
-    height: 35vw;
+  .carousel_cell:nth-child(2) { transform: rotateY(40deg) translateZ(850px); }
 
-  }
+  .carousel_cell:nth-child(3) { transform: rotateY(80deg) translateZ(850px); }
 
-  .scene{
+  .carousel_cell:nth-child(4) { transform: rotateY(120deg) translateZ(850px); }
 
-    height: 30vw;
-    max-height: 320px;
-    max-width: 535px;
+  .carousel_cell:nth-child(5) { transform: rotateY(160deg) translateZ(850px); }
 
-  }
+  .carousel_cell:nth-child(6) { transform: rotateY(200deg) translateZ(850px); }
+
+  .carousel_cell:nth-child(7) { transform: rotateY(240deg) translateZ(850px); }
+
+  .carousel_cell:nth-child(8) { transform: rotateY(280deg) translateZ(850px); }
+
+  .carousel_cell:nth-child(9) { transform: rotateY(320deg) translateZ(850px); }
 
   .carousel-options img{
 
     width: 98px;
     height: 98px;
+  }
+
+  .next, .previous{
+
+    bottom: 70px;
+
   }
 
 }
