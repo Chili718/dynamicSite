@@ -25,6 +25,30 @@ section {
   height: auto;
   color: #ffffff;
   overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+section h1{
+
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/0.7);
+  z-index: 3;
+  border-bottom: 2px solid white;
+
+  padding: 0px 15px 0px 15px;
+
+}
+
+section p{
+
+
 
 }
 
@@ -436,13 +460,21 @@ About Sections
 
 .about{
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   padding: 1% 1%;
 }
 
 .abouttext{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.about p{
   padding-right: 2%;
   word-wrap: break-word;
   width: 40vw;
@@ -453,9 +485,22 @@ About Sections
 
 .picofme{
   width: 45vw;
-  max-width: 60rem;
+  max-width: 36rem;
   height:auto;
   padding-left: 2%;
+}
+
+/**************************************************************************
+Freelance Work
+**************************************************************************/
+
+.freelanceWork{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 /**************************************************************************
@@ -464,13 +509,19 @@ Code Projects
 
 .codeprojects{
 
-  display: flex;
-  justify-content: space-around;
   padding: 1% 1%;
 
 }
 
-.codeprojects div{
+.projectContainer{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.projectContainer div{
 
   display: flex;
   align-items: center;
@@ -478,11 +529,6 @@ Code Projects
 
 }
 
-.codeprojects h1{
-
-  padding-bottom: 10px;
-
-}
 
 .container{
   position: relative;
@@ -559,7 +605,7 @@ https://tympanus.net/codrops/author/crnacura/
 
 .codeprojects img{
   max-width: 50rem;
-  width: 25vw;
+  width: 35vw;
   height: auto;
 }
 
@@ -576,10 +622,6 @@ Photoshop Projects
 
 .ps{
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding-bottom: 2em;
 
 }
@@ -649,18 +691,13 @@ End (Footer kind of)
 
 .end{
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
+
 
 }
 
 .end h1{
 
-  padding-bottom: 40px;
   padding-top: 100px;
-  font-size: 2rem;
   transition: 0.5s ease-in-out;
 
 
@@ -714,23 +751,31 @@ End (Footer kind of)
 Other Devices CSS
 **************************************************************************/
 
-@media screen and (max-width: 1920px){
+@media screen and (min-width: 1920px){
 
-    .picofme{
-      max-width: 40rem;
-    }
-    .codeprojects img{
+    .container img{
 
-      max-width: 45rem;
-
-    }
-    .codeprojects img{
-
-      min-width: 30rem;
+      min-width: 26rem;
 
     }
 
 }
+
+@media screen and (min-width: 1600px){
+
+    section p{
+
+      font-size: 26px;
+
+    }
+    section h1{
+
+      font-size: 75px;
+
+    }
+
+}
+
 @media screen and (max-width: 1028px){
 
   .navbar{
@@ -746,9 +791,9 @@ Other Devices CSS
 
 
   }
-  .codeprojects img{
+  .container img{
 
-    min-width: 25rem;
+    min-width: 24rem;
 
   }
   .codeprojects{
@@ -822,12 +867,10 @@ Other Devices CSS
 
 }
 
-.abouttext{
+.about p{
   padding: 4% 0%;
   border-left: none;
-  border-top: 2px solid white;
   width: 75vw;
-  font-size: 1.1rem;
 }
 
 .picofme{
@@ -838,7 +881,7 @@ Other Devices CSS
 
 }
 
-.codeprojects{
+.projectContainer{
   flex-direction: column;
 }
 
@@ -888,22 +931,6 @@ Other Devices CSS
 
 }
 
-@media screen and (max-width: 770px){
-
-
-
-}
-
-@media screen and (max-width: 600px){
-
-
-}
-
-@media screen and (max-width: 550px){
-
-
-}
-
 @media screen and (max-width: 472px){
 
   .end h1{
@@ -919,7 +946,7 @@ Other Devices CSS
 
   }
 
-  .abouttext{
+  section p{
 
     font-size: 0.8rem;
   }
@@ -961,9 +988,6 @@ Other Devices CSS
 
 @media screen and (max-width: 340px){
 
-  .abouttext{
-    font-size: 0.7rem;
-  }
   .about{
 
     padding: 3% 1%;

@@ -27,6 +27,12 @@ session_start();
 
   <script>
 
+  $(document).ready(function(){
+
+
+
+  });
+
   //change opacity of the header background on scroll
   $(window).on("scroll", function(){
 
@@ -38,6 +44,32 @@ session_start();
       $(".navbar").removeClass("nottransparent");
       $(".addU").removeClass("nottransparent");
       $(".addIM").removeClass("nottransparent");
+    }
+
+    var position = $(window).scrollTop();
+    var bottom = $(document).height() - $(window).height();
+
+    if($(window).scrollTop() + $(window).height() > $(document).height()-1){
+
+      var count = $(".psW").length;;
+
+      console.log(count);
+
+      $.ajax({
+
+        url: 'php/viewMore.php',
+        type: 'POST',
+        data: {count: count},
+        success: function(response){
+
+          //console.log("success");
+          $(".grid div").last().after(response).show().fadeIn("slow");
+          addLB();
+
+        }
+
+      });
+
     }
 
   });
@@ -131,7 +163,6 @@ session_start();
     <div id="viewPrevious"><img src="images/arrow.png"></div>
     <div id="viewNext"><img src="images/arrow.png"></div>
   </div>
-
   <script src="viewLightbox.js"></script>
  <script src="app.js"></script>
 </body>

@@ -124,8 +124,9 @@ function deleteIm(){
       lightbox.classList.remove('active');
       document.body.classList.remove('noScroll');
 
+      //document.querySelectorAll('.grid div').innerHTML = "";
       document.querySelector('.grid').innerHTML = "";
-
+      
       $.get( "php/view.php", function( data ) {
           $('.grid').html(data);
 
@@ -168,7 +169,14 @@ function updateIM(){
         lightbox.classList.remove('active');
         document.body.classList.remove('noScroll');
         */
+        //document.querySelectorAll('.grid div').innerHTML = "";
         document.querySelector('.grid').innerHTML = "";
+
+        while(document.querySelector('.grid').firstChild){
+
+          document.querySelector('.grid').removeChild(document.querySelector('.grid').firstChild);
+
+        }
 
         $.get( "php/view.php", function( data ) {
             $('.grid').html(data);

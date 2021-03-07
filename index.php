@@ -176,7 +176,9 @@
       </div>
 
       <div class="abouttext">
+
         <h1>About Me</h1>
+        
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt facilisis elementum. Proin tortor lorem, vehicula et libero quis,
           convallis fermentum nunc. Quisque sed urna sollicitudin, suscipit augue quis, porttitor odio. Maecenas ut elementum lorem. Etiam sagittis ex ante.
@@ -203,29 +205,31 @@
 
        <h1>Coding Projects</h1>
 
-       <div>
-         <h1>Sorting Algorithm Visualizer</h1>
-         <div class="container">
-           <img src="images/dummy.gif">
-           <div class="org">
-             <a href="">View Source</a>
-             <a href="">View Live Demo</a>
-           </div>
-        </div>
-        <p>Tap or Hover for more!</p>
+       <div class="projectContainer">
+         <div>
+           <h2>Sorting Algorithm Visualizer</h2>
+           <div class="container">
+             <img src="images/dummy.gif">
+             <div class="org">
+               <a href="">View Source</a>
+               <a href="">View Live Demo</a>
+             </div>
+          </div>
+          <p>Tap or Hover for more!</p>
 
-       </div>
+         </div>
 
-       <div>
-         <h1>Pathfinding Algorithm Visualizer</h1>
-         <div class="container">
-           <img src="images/dummy.gif">
-           <div class="org">
-             <a href="">View Source</a>
-             <a href="">View Live Demo</a>
-           </div>
-        </div>
-        <p>Tap or Hover for more!</p>
+         <div>
+           <h2>Pathfinding Algorithm Visualizer</h2>
+           <div class="container">
+             <img src="images/dummy.gif">
+             <div class="org">
+               <a href="">View Source</a>
+               <a href="">View Live Demo</a>
+             </div>
+          </div>
+          <p>Tap or Hover for more!</p>
+         </div>
        </div>
 
       </section>

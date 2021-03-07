@@ -9,7 +9,7 @@ else
 {
 
   $table  = "photoshopwork";
-  $result = $con->query("SELECT * FROM $table");
+  $result = $con->query("SELECT * FROM $table ORDER BY id LIMIT 20");
 
   if (mysqli_num_rows($result)!=0) {
 
