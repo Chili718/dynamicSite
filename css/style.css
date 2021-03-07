@@ -16,21 +16,15 @@ html {
 }
 
 section {
-  background: rgb(18, 18, 17);
-  font-family: freight-neo-pro,sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/1.9);
   z-index: 3;
   height: auto;
-  color: #ffffff;
   overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  min-height: 400px;
 }
 
 section h1{
@@ -38,17 +32,42 @@ section h1{
   font-family: freight-neo-pro,sans-serif;
   font-weight: 500;
   font-style: normal;
-  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/0.7);
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/1);
   z-index: 3;
-  border-bottom: 2px solid white;
-
+  border-bottom: 2px solid #bed6e0;
   padding: 0px 15px 0px 15px;
+  color: #d5eaf2;
+
+}
+
+section h2{
+
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/2);
+  color: #d5eaf2;
+  padding: 2%;
 
 }
 
 section p{
 
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/2.7);
+  color: #afc2c9;
+  text-align: left;
+}
 
+section a{
+
+  font-family: freight-neo-pro,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/2.3);
+  color: #afc2c9;
 
 }
 
@@ -110,7 +129,8 @@ Preloader
 .loadStuff img{
 
 
-  width: 25vw;
+  width: 10vw;
+  min-width: 75px;
   height: auto;
 
 }
@@ -301,7 +321,7 @@ Add PS Work icon
 }
 
 .nottransparent{
-  background-color: rgba(13, 13, 12, 0.95);
+  background-color: #000c15;
 }
 
 /**************************************************************************
@@ -322,21 +342,6 @@ Parallax and Text Inside (and SVG)
 svg{
 
   z-index: 2;
-
-}
-
-.image-text{
-
-  font-family: sketchnote-square, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 85px;
-  z-index: 1;
-  color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  letter-spacing: 0.1em;
-  text-shadow: 2px 2px rgba(0, 0, 0, 1);
-  word-wrap: break-word;
 
 }
 
@@ -463,6 +468,10 @@ About Sections
   flex-direction: row;
   justify-content: space-evenly;
   padding: 1% 1%;
+  background-color: #024247;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+  margin-bottom: -10vw;
+  padding-bottom: 10vw;
 }
 
 .abouttext{
@@ -475,17 +484,16 @@ About Sections
 }
 
 .about p{
-  padding-right: 2%;
   word-wrap: break-word;
   width: 40vw;
-  border-left: 2px solid white;
-  padding-left: 4%;
+  padding-top: 5%;
 }
 
 
 .picofme{
-  width: 45vw;
-  max-width: 36rem;
+  width: 25vw;
+  max-width: 400px;
+  min-width: 275px;
   height:auto;
   padding-left: 2%;
 }
@@ -496,10 +504,16 @@ Freelance Work
 
 .freelanceWork{
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding-top: 10vw;
+  background-color: #023b3e;
+  padding-bottom: 10vw;
+
+}
+
+.freelanceWork img{
+
+  width: 75vw;
+  max-width: 600px;
 
 }
 
@@ -508,8 +522,17 @@ Code Projects
 **************************************************************************/
 
 .codeprojects{
-
   padding: 1% 1%;
+  background-color: #00333a;
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% calc(0% + 10vw));
+  margin-top: -10vw;
+  padding-top: 10vw;
+  padding-bottom: 12vw;
+}
+
+.andMore{
+
+  width: 55vw;
 
 }
 
@@ -526,6 +549,7 @@ Code Projects
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 5%;
 
 }
 
@@ -556,6 +580,7 @@ Code Projects
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: fit-content;
 }
 
 .org a{
@@ -563,7 +588,6 @@ Code Projects
   text-decoration: none;
   color: rgba(255,255,255,0);
   padding: 10% 0%;
-  font-size: 100%;
   visibility: hidden;
 
 }
@@ -604,8 +628,8 @@ https://tympanus.net/codrops/author/crnacura/
 
 
 .codeprojects img{
-  max-width: 50rem;
-  width: 35vw;
+  width: 20vw;
+  min-width: 300px;
   height: auto;
 }
 
@@ -623,6 +647,11 @@ Photoshop Projects
 .ps{
 
   padding-bottom: 2em;
+  background-color: #002b34;
+  clip-path: polygon(0 calc(0% + 10vw), 0 100%, 100% 100%, 100% 0);
+  margin-top: -10vw;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
 
 }
 
@@ -654,6 +683,7 @@ Photoshop Projects
   box-shadow: 0 8px rgb(107, 107, 107);
   border-radius: 2em;
   max-width: auto;
+  transform: translateY(2vw);
 
 }
 
@@ -691,14 +721,10 @@ End (Footer kind of)
 
 .end{
 
-
-
-}
-
-.end h1{
-
-  padding-top: 100px;
-  transition: 0.5s ease-in-out;
+  background-color: #002125;
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% calc(0% + 10vw));
+  margin-top: -10vw;
+  padding-top: 10vw;
 
 
 }
@@ -751,28 +777,37 @@ End (Footer kind of)
 Other Devices CSS
 **************************************************************************/
 
-@media screen and (min-width: 1920px){
+@media screen and (min-width: 1440px){
 
-    .container img{
+  section h1{
 
-      min-width: 26rem;
+    font-size: 55px;
 
-    }
+  }
 
-}
+  section h2{
 
-@media screen and (min-width: 1600px){
+    font-size: 22px;
 
-    section p{
+  }
 
-      font-size: 26px;
+  section p{
 
-    }
-    section h1{
+    font-size: 18px;
+  }
 
-      font-size: 75px;
+  section a{
 
-    }
+    font-size: 24px;
+
+  }
+
+  .codeprojects img{
+
+    max-width: 450px;
+    width: 24vw;
+
+  }
 
 }
 
@@ -789,20 +824,6 @@ Other Devices CSS
 
     font-size: 17px;
 
-
-  }
-  .container img{
-
-    min-width: 24rem;
-
-  }
-  .codeprojects{
-      padding: 1.5% 1.5%;
-  }
-
-  .org a{
-
-    font-size: 110%;
 
   }
 
@@ -862,7 +883,6 @@ Other Devices CSS
 .about{
 
   flex-direction: column;
-  padding-bottom: 4em;
 
 
 }
@@ -870,25 +890,10 @@ Other Devices CSS
 .about p{
   padding: 4% 0%;
   border-left: none;
-  width: 75vw;
-}
-
-.picofme{
-
-  padding-top: 4%;
-  padding-bottom: 4%;
-
-
 }
 
 .projectContainer{
   flex-direction: column;
-}
-
-.codeprojects div{
-
-  padding: 3% 0%;
-
 }
 
 }
@@ -904,19 +909,7 @@ Other Devices CSS
     min-height: 50px;
 
   }
-  .image-text{
-    font-size: 3rem;
-  }
-  .picofme{
 
-    min-width: 20rem;
-
-  }
-  .org a{
-
-    font-size: 140%;
-
-  }
   .ship{
 
     min-width: 100px;
@@ -927,6 +920,7 @@ Other Devices CSS
     min-width: 100px;
 
   }
+
 
 
 }
@@ -946,10 +940,6 @@ Other Devices CSS
 
   }
 
-  section p{
-
-    font-size: 0.8rem;
-  }
 
   .image-anim p{
 
@@ -957,14 +947,7 @@ Other Devices CSS
 
 
   }
-  .codeprojects div{
-    padding: 4% 2%;
-  }
-  .codeprojects img{
 
-    min-width: 18rem;
-
-  }
   .downArrow span{
 
     border-bottom: 2px solid #ffffff;
@@ -988,27 +971,6 @@ Other Devices CSS
 
 @media screen and (max-width: 340px){
 
-  .about{
-
-    padding: 3% 1%;
-
-  }
-  .picofme{
-
-    min-width: 17rem;
-
-  }
-  .codeprojects img{
-
-    min-width: 16rem;
-
-  }
-
-  .ps p {
-
-    padding-top: 10vw;
-
-  }
 
 
 }

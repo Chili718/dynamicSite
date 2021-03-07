@@ -5,7 +5,7 @@
   top: 11vh;
   justify-content: center;
   padding-bottom: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+  grid-template-columns: repeat(auto-fill, minmax(275px, 275px));
   grid-gap: 1rem;
 
 }

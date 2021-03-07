@@ -160,7 +160,7 @@
           <path d="M438.577 85.896C436.849 90.792 433.441 94.728 428.353 97.704C423.265 100.584 416.161 102.024 407.041 102.024C400.705 102.024 395.473 100.92 391.345 98.712C387.217 96.504 384.193 93.624 382.273 90.072C380.353 86.52 379.393 82.68 379.393 78.552C379.393 69.336 381.217 61.128 384.865 53.928C388.513 46.632 393.649 40.968 400.273 36.936C406.993 32.808 414.769 30.744 423.601 30.744C429.169 30.744 433.969 32.376 438.001 35.64C442.033 38.904 444.049 43.224 444.049 48.6C444.049 50.712 443.281 52.488 441.745 53.928C440.305 55.272 438.193 55.944 435.409 55.944C433.105 55.944 431.473 55.368 430.513 54.216C429.553 52.968 429.073 51.528 429.073 49.896C429.073 47.784 428.353 46.104 426.913 44.856C425.473 43.608 423.649 42.984 421.441 42.984C418.561 42.984 415.105 44.52 411.073 47.592C407.137 50.664 403.729 54.936 400.849 60.408C398.065 65.784 396.673 71.832 396.673 78.552C396.673 81.528 397.777 84.072 399.985 86.184C402.193 88.296 405.265 89.352 409.201 89.352C412.465 89.352 415.105 88.728 417.121 87.48C419.137 86.232 421.297 84.456 423.601 82.152C425.041 80.712 426.241 79.656 427.201 78.984C428.161 78.312 429.169 77.976 430.225 77.976C432.529 77.976 434.401 78.648 435.841 79.992C437.281 81.24 438.193 83.208 438.577 85.896Z" stroke="white" stroke-width="3"/>
           <path d="M479.332 102.024C469.828 102.024 462.869 100.152 458.453 96.408C454.133 92.664 451.973 87.672 451.973 81.432C451.973 72.12 453.893 63.672 457.733 56.088C461.573 48.408 466.9 42.408 473.716 38.088C480.532 33.672 488.308 31.464 497.044 31.464C502.516 31.464 507.076 33 510.724 36.072C514.468 39.144 516.34 43.704 516.34 49.752C516.34 56.184 514.229 61.224 510.005 64.872C505.877 68.52 500.453 71.16 493.733 72.792C487.109 74.328 478.757 75.576 468.677 76.536C468.389 77.784 468.245 79.272 468.245 81C468.245 83.688 469.397 85.752 471.701 87.192C474.005 88.632 477.221 89.352 481.349 89.352C484.325 89.352 487.78 88.728 491.716 87.48C495.748 86.232 498.82 84.168 500.932 81.288C502.18 79.656 503.621 78.36 505.253 77.4C506.981 76.44 508.661 75.96 510.293 75.96C511.829 75.96 513.076 76.488 514.036 77.544C515.092 78.504 515.621 79.992 515.621 82.008C514.565 85.08 512.356 88.2 508.996 91.368C505.636 94.44 501.365 96.984 496.181 99C491.093 101.016 485.476 102.024 479.332 102.024ZM472.421 63.288C478.565 63.192 484.853 62.04 491.285 59.832C497.717 57.528 500.932 53.544 500.932 47.88C500.932 46.536 500.308 45.528 499.06 44.856C497.812 44.088 496.469 43.704 495.029 43.704C492.245 43.704 489.317 44.76 486.245 46.872C483.269 48.888 480.532 51.432 478.036 54.504C475.54 57.48 473.669 60.408 472.421 63.288Z" stroke="white" stroke-width="3"/>
           </svg>
-        <p>Designer and Developer</p>
+        <p>Designer and Full Stack Web Developer</p>
       </div>
       <div id="bout" class="downArrow">
           <a href="#bout">
@@ -178,7 +178,7 @@
       <div class="abouttext">
 
         <h1>About Me</h1>
-        
+
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt facilisis elementum. Proin tortor lorem, vehicula et libero quis,
           convallis fermentum nunc. Quisque sed urna sollicitudin, suscipit augue quis, porttitor odio. Maecenas ut elementum lorem. Etiam sagittis ex ante.
@@ -195,6 +195,18 @@
 
       <h1>Freelance Work</h1>
 
+      <div>
+        <h2>My NC State Retirement</h2>
+        <div class="container">
+          <img src="images/myNCS.jpg">
+          <div class="org">
+            <a href="https://myncsretirement.com/" target="_blank" rel="noopener noreferrer">View Website</a>
+          </div>
+       </div>
+       <p>Tap or Hover for more!</p>
+
+      </div>
+
     </section>
     <!--
       <div id="projects" class="parallax" data-parallax="scroll" data-z-index="0" data-image-src="images/first.jpg" data-natural-width="5760" data-natural-height="3840">
@@ -204,6 +216,10 @@
      <section class="codeprojects" id="projects">
 
        <h1>Coding Projects</h1>
+
+       <p class ="andMore">
+         These are two of my bigger projects I've done in my freetime using REACT. You can view the code on Git along with other programs I've made using a variety of other languages such as C++, C#(Unity), Python, Java. My Git repositories are a combination of my course work and other projects I've done in my free time. You can also view the source for <a href="https://github.com/Chili718/dynamicSite"  target="_blank" rel="noopener noreferrer">This Website</a> which was made using JS, PHP, jQuery, and mySQL.
+       </p>
 
        <div class="projectContainer">
          <div>
@@ -230,6 +246,7 @@
           </div>
           <p>Tap or Hover for more!</p>
          </div>
+
        </div>
 
       </section>
@@ -241,6 +258,10 @@
      <section class="ps" id="photoshop">
 
        <h1>Photoshop Work</h3>
+
+       <p class ="andMore">
+         In order to get better at using Photoshop I would make an image every day that would help me learn something new about the program and improve upon my design skills. After doing this for a whole year I was left with a deep understanding of Photoshop and a large body of work. I can 100% guarentee you will like at least one of my images so check them out! I ended up really enjoying the experience and taking a lot from it so, anytime I want to learn a program, coding language, or anything I apply the same principal. I still make images for fun and will upload them here and on my Instagram when they are finished.
+       </p>
 
        <div class="scene">
          <div class="carousel">
@@ -258,22 +279,19 @@
 
        </div>
 
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt facilisis elementum. Proin tortor lorem, vehicula et libero quis, convallis fermentum nunc. Quisque sed urna sollicitudin, suscipit augue quis, porttitor odio. Maecenas ut elementum lorem. Etiam sagittis ex ante.
-      </p>
-
-      <div onclick="location.href='view.php'" class="btn">View All</div>
+      <div onclick="location.href='view.php'" class="btn">View All Images</div>
 
       </section>
 
+      <!--
+
       <div id="contact" class="parallax" data-parallax="scroll" data-z-index="0" data-image-src="images/third.jpg" data-natural-width="3855" data-natural-height="3198">
           <p class="image-text">
-            <!--<img src="images/circle.png" alt="">-->
+            <img src="images/circle.png" alt="">
             Contact Me
           </p>
       </div>
-
+    -->
      <section class="end">
 
          <h1>Thanks for stopping by!</h1>
