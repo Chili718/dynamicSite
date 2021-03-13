@@ -23,7 +23,7 @@ session_start();
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-  <script src="linlout.js"></script>
+  <script src="js/linlout.js"></script>
 
   <script>
 
@@ -163,8 +163,8 @@ session_start();
     <div id="viewPrevious"><img src="images/arrow.png"></div>
     <div id="viewNext"><img src="images/arrow.png"></div>
   </div>
-  <script src="viewLightbox.js"></script>
- <script src="app.js"></script>
+  <script src="js/viewLightbox.js"></script>
+ <script src="js/app.js"></script>
 </body>
 
 </html>

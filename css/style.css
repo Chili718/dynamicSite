@@ -321,7 +321,7 @@ Add PS Work icon
 }
 
 .nottransparent{
-  background-color: #000c15;
+  background-color: rgba(0, 12, 21, 0.9);
 }
 
 /**************************************************************************
@@ -669,7 +669,7 @@ Photoshop Projects
 .btn{
 
   outline: 0;
-  background-color: rgba(255, 255, 255);
+  background-color: #d3e1e6;
   border: none;
   color: black;
   padding: 10px 20px;
@@ -683,9 +683,8 @@ Photoshop Projects
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 8px rgb(107, 107, 107);
+  box-shadow: 0 8px #798d94;
   border-radius: 2em;
-  max-width: auto;
 
 }
 
@@ -1022,7 +1021,7 @@ Other Devices CSS
   .addIM{
 
 
-    bottom: 16%;
+    bottom: 20%;
 
   }
 

@@ -37,7 +37,7 @@ if(isset($_SESSION['verified']))
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-  <script src="linlout.js"></script>
+  <script src="js/linlout.js"></script>
 
 </head>
 
@@ -100,12 +100,12 @@ if(isset($_SESSION['verified']))
       <label>Password: </label>
       </div>
       <div class="txt">
-      <input type="text" name="userNME"/>
-      <input type="password" name="pswrd"/>
+      <input type="text" name="userNME" placeholder="Username..."/>
+      <input type="password" name="pswrd" placeholder="Password..."/>
       </div>
       </div>
       <div class="sub">
-        
+
         <div onclick="login()" class="btn">Login</div>
         <input type= "submit" style="display: none">
       </div>
@@ -113,7 +113,7 @@ if(isset($_SESSION['verified']))
 
   </div>
 
- <script src="app.js"></script>
+ <script src="js/app.js"></script>
 </body>
 
 </html>

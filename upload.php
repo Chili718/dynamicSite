@@ -22,7 +22,7 @@
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-  <script src="linlout.js"></script>
+  <script src="js/linlout.js"></script>
 </head>
 
 <body>
@@ -120,7 +120,7 @@
 
   </div>
 
- <script src="app.js"></script>
+ <script src="js/app.js"></script>
 </body>
 
 </html>

@@ -22,7 +22,7 @@ require 'php/user.php';
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="linlout.js"></script>
+  <script src="js/linlout.js"></script>
 
   <!--
   small looks change to overrwrite the style.css bottom value on the add im icon
@@ -129,7 +129,7 @@ require 'php/user.php';
 
   </div>
 
- <script src="app.js"></script>
+ <script src="js/app.js"></script>
 </body>
 
 </html>

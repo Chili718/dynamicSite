@@ -23,7 +23,7 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- The parallax library I am using thanks to PixelCog -->
-    <script src="parallax.min.js"></script>
+    <script src="js/parallax.min.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156268666-1"></script>
@@ -35,7 +35,7 @@
       gtag('config', 'UA-156268666-1');
     </script>
 
-    <script src="linlout.js"></script>
+    <script src="js/linlout.js"></script>
 
     <script>
     $(document).ready(function() {
@@ -297,9 +297,9 @@
         <img id = "closeBox" src="images/closeLightboxIcon.png">
       </div>
 
-      <script src="carousel.js"></script>
-      <script src="lightbox.js"></script>
-      <script src="app.js"></script>
+      <script src="js/carousel.js"></script>
+      <script src="js/lightbox.js"></script>
+      <script src="js/app.js"></script>
 
 
   </body>

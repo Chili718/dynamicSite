@@ -119,14 +119,14 @@ function deleteIm(){
     },
     success:function(php_result){
 
-      alert(php_result);
+      //alert(php_result);
 
       lightbox.classList.remove('active');
       document.body.classList.remove('noScroll');
 
       //document.querySelectorAll('.grid div').innerHTML = "";
       document.querySelector('.grid').innerHTML = "";
-      
+
       $.get( "php/view.php", function( data ) {
           $('.grid').html(data);
 
@@ -136,7 +136,7 @@ function deleteIm(){
     },
     error: function(xhr){
 
-      console.log(xhr.responseText);
+      //console.log(xhr.responseText);
 
     }
 
@@ -164,7 +164,7 @@ function updateIM(){
       },
       success:function(php_result){
 
-        alert(php_result);
+        //alert(php_result);
         /*
         lightbox.classList.remove('active');
         document.body.classList.remove('noScroll');
@@ -186,7 +186,7 @@ function updateIM(){
       },
       error: function(xhr){
 
-        console.log(xhr.responseText);
+        //console.log(xhr.responseText);
 
       }
 
