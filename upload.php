@@ -97,8 +97,8 @@
       <label for="imageDes">Description: </label>
       </div>
       <div class="txt">
-      <input type="text" name="imageNme" id="imageNme" value="" placeholder="Enter the name..."/>
-      <input type="text" name="imageDes" id="imageDes" value="" placeholder="Enter the description..."/>
+      <input type="text" name="imageNme" id="imageNme" placeholder="Enter the name..."/>
+      <input type="text" name="imageDes" id="imageDes" placeholder="Enter the description..."/>
       </div>
       </div>
 

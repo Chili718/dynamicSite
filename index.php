@@ -208,17 +208,13 @@
       </div>
 
     </section>
-    <!--
-      <div id="projects" class="parallax" data-parallax="scroll" data-z-index="0" data-image-src="images/first.jpg" data-natural-width="5760" data-natural-height="3840">
-          <p class="image-text">Projects</p>
-      </div>
-    -->
+
      <section class="codeprojects" id="projects">
 
        <h1>Coding Projects</h1>
 
        <p class ="andMore">
-         These are two of my bigger projects I've done in my freetime using REACT. You can view the code on Git along with other programs I've made using a variety of other languages such as C++, C#(Unity), Python, Java. My Git repositories are a combination of my course work and other projects I've done in my free time. You can also view the source for <a href="https://github.com/Chili718/dynamicSite"  target="_blank" rel="noopener noreferrer">This Website</a> which was made using JS, PHP, jQuery, and mySQL.
+         Here are two of my bigger projects I've done in my free time using REACT. You can view the code on Git along with other programs I've made using a variety of other languages such as C++, C#(Unity), Python, Java. <a href="https://github.com/Chili718?tab=repositories"  target="_blank" rel="noopener noreferrer">My Git repositories</a> are a combination of my course work and other projects I've done in my free time. You can also view the source for <a href="https://github.com/Chili718/dynamicSite"  target="_blank" rel="noopener noreferrer">This Website</a> which was made using JS, PHP, jQuery, and mySQL.
        </p>
 
        <div class="projectContainer">
@@ -250,17 +246,13 @@
        </div>
 
       </section>
-      <!--
-      <div id="photoshop" class="parallax" data-parallax="scroll" data-z-index="0" data-image-src="images/second.jpg" data-natural-width="1421" data-natural-height="908">
-          <p class="image-text">Photoshop Work</p>
-      </div>
-    -->
+
      <section class="ps" id="photoshop">
 
        <h1>Photoshop Work</h3>
 
        <p class ="andMore">
-         In order to get better at using Photoshop I would make an image every day that would help me learn something new about the program and improve upon my design skills. After doing this for a whole year I was left with a deep understanding of Photoshop and a large body of work. I can 100% guarentee you will like at least one of my images so check them out! I ended up really enjoying the experience and taking a lot from it so, anytime I want to learn a program, coding language, or anything I apply the same principal. I still make images for fun and will upload them here and on my Instagram when they are finished.
+         In order to get better at using Photoshop I would make an image every day that would help me learn something new about the program and improve upon my design skills. After doing this for a whole year I was left with a deep understanding of Photoshop and a large body of work. I can 100% guarantee you will like at least one of my images so check them out! I ended up really enjoying the experience and taking a lot from it so, anytime I want to learn a program, coding language, or anything I apply the same principle. I still make images for fun and will upload them here and on my Instagram when they are finished.
        </p>
 
        <div class="scene">
@@ -283,24 +275,15 @@
 
       </section>
 
-      <!--
-
-      <div id="contact" class="parallax" data-parallax="scroll" data-z-index="0" data-image-src="images/third.jpg" data-natural-width="3855" data-natural-height="3198">
-          <p class="image-text">
-            <img src="images/circle.png" alt="">
-            Contact Me
-          </p>
-      </div>
-    -->
      <section class="end">
 
          <h1>Thanks for stopping by!</h1>
 
          <ul>
-           <a href="https://twitter.com/mrsitandwatch?lang=en" target="_blank"><li><img src="images/twitter.png"></li></a>
-           <a href="https://github.com/Chili718" target="_blank"><li><img src="images/git.png"></li></a>
-           <a href="https://www.instagram.com/tice_jon/" target="_blank"><li><img src="images/insta.png"></li></a>
-           <a href="https://www.facebook.com/jon.tice.718" target="_blank"><li><img src="images/facebook.png"></li></a>
+           <a href="https://twitter.com/jon_tice_" target="_blank" rel="noopener noreferrer"><li><img src="images/twitter.png"></li></a>
+           <a href="https://github.com/Chili718?tab=repositories" target="_blank" rel="noopener noreferrer"><li><img src="images/git.png"></li></a>
+           <a href="https://www.instagram.com/tice_jon/" target="_blank" rel="noopener noreferrer"><li><img src="images/insta.png"></li></a>
+           <a href="https://www.facebook.com/jon.tice.718" target="_blank" rel="noopener noreferrer"><li><img src="images/facebook.png"></li></a>
          </ul>
 
          <a class="button" href="mailto: ticej2@winthropalumni.com" target="_blank">Email Me</a>

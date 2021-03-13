@@ -16,7 +16,7 @@ html {
 }
 
 section {
-  z-index: 3;
+
   height: auto;
   overflow: hidden;
   text-align: center;
@@ -33,7 +33,6 @@ section h1{
   font-weight: 500;
   font-style: normal;
   font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/1);
-  z-index: 3;
   border-bottom: 2px solid #bed6e0;
   padding: 0px 15px 0px 15px;
   color: #d5eaf2;
@@ -56,9 +55,10 @@ section p{
   font-family: freight-neo-pro,sans-serif;
   font-weight: 500;
   font-style: normal;
-  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/2.7);
+  font-size: calc( (1.44em + 0.46125 * ( ( 100vw - 37.5em) / 18.75 ))/2.2);
   color: #afc2c9;
   text-align: left;
+  line-height: 1.7;
 }
 
 section a{
@@ -130,7 +130,7 @@ Preloader
 
 
   width: 10vw;
-  min-width: 75px;
+  min-width: 200px;
   height: auto;
 
 }
@@ -491,8 +491,8 @@ About Sections
 
 
 .picofme{
-  width: 25vw;
-  max-width: 400px;
+  width: 33vw;
+  max-width: 450px;
   min-width: 275px;
   height:auto;
   padding-left: 2%;
@@ -512,8 +512,9 @@ Freelance Work
 
 .freelanceWork img{
 
-  width: 75vw;
+  width: 65vw;
   max-width: 600px;
+  min-width: 300px;
 
 }
 
@@ -524,7 +525,8 @@ Code Projects
 .codeprojects{
   padding: 1% 1%;
   background-color: #00333a;
-  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% calc(0% + 10vw));
+  /*clip-path: polygon(0 0, 0 100%, 100% 100%, 100% calc(0% + 10vw));*/
+  clip-path: polygon(0 0, 100% calc(0% + 10vw), 100% calc(100% - 10vw), 0% 100%);
   margin-top: -10vw;
   padding-top: 10vw;
   padding-bottom: 12vw;
@@ -532,7 +534,7 @@ Code Projects
 
 .andMore{
 
-  width: 55vw;
+  width: 60vw;
 
 }
 
@@ -628,7 +630,8 @@ https://tympanus.net/codrops/author/crnacura/
 
 
 .codeprojects img{
-  width: 20vw;
+  width: 24vw;
+  max-width: 400px;
   min-width: 300px;
   height: auto;
 }
@@ -648,7 +651,7 @@ Photoshop Projects
 
   padding-bottom: 2em;
   background-color: #002b34;
-  clip-path: polygon(0 calc(0% + 10vw), 0 100%, 100% 100%, 100% 0);
+  /*clip-path: polygon(0 calc(0% + 10vw), 0 100%, 100% 100%, 100% 0);*/
   margin-top: -10vw;
   padding-top: 10vw;
   padding-bottom: 10vw;
@@ -683,7 +686,6 @@ Photoshop Projects
   box-shadow: 0 8px rgb(107, 107, 107);
   border-radius: 2em;
   max-width: auto;
-  transform: translateY(2vw);
 
 }
 
@@ -880,13 +882,6 @@ Other Devices CSS
 
 }
 
-.about{
-
-  flex-direction: column;
-
-
-}
-
 .about p{
   padding: 4% 0%;
   border-left: none;
@@ -921,9 +916,45 @@ Other Devices CSS
 
   }
 
+  .about{
+
+    flex-direction: column;
+
+
+  }
+
+  .about p{
+
+    width: 70vw;
+
+  }
+
+  section h1{
+
+    font-size: 30px;
+
+  }
+
+  section h2{
+
+    font-size: 17px;
+
+  }
+
+  section p, section a{
+
+    font-size: 14px;
+  }
+
+  .andMore{
+
+    width: 80vw;
+
+  }
 
 
 }
+
 
 @media screen and (max-width: 472px){
 
@@ -967,11 +998,12 @@ Other Devices CSS
 
   }
 
-}
+  .end, .ps, .codeprojects{
 
-@media screen and (max-width: 340px){
+    padding-top: 18vw;
+    padding-bottom: 18vw;
 
-
+  }
 
 }
 

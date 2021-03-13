@@ -105,7 +105,7 @@ if(isset($_SESSION['verified']))
       </div>
       </div>
       <div class="sub">
-        <br><br>
+        
         <div onclick="login()" class="btn">Login</div>
         <input type= "submit" style="display: none">
       </div>

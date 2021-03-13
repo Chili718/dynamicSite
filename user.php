@@ -112,10 +112,10 @@ require 'php/user.php';
 
       </div>
       <div class="txt">
-      <input type="text" name="userNME" id="userNME"/>
-      <input type="password" name="pswrd" id="pswrd"/>
-      <input type="password" name="pswrdR" id="pswrdR"/>
-      <input type="email" name="email" id="email"/>
+      <input type="text" name="userNME" id="userNME" placeholder="Username..."/>
+      <input type="password" name="pswrd" id="pswrd" placeholder="Password..."/>
+      <input type="password" name="pswrdR" id="pswrdR" placeholder="Repeat Password..."/>
+      <input type="email" name="email" id="email" placeholder="Email..."/>
       </div>
       </div>
       <?php
@@ -144,6 +144,8 @@ require 'php/user.php';
       var pswrd = $('#pswrd').val();
       var pswrdR = $('#pswrdR').val();
       var email = $('#email').val();
+
+      var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
       if(userNme == '' || pswrd == '' || pswrdR == '' || email == '')
       {
@@ -192,6 +194,17 @@ require 'php/user.php';
 
         return false;
 
+
+      }else if(!regex.test(email))
+      {
+
+        document.getElementById('validateTXT').innerHTML = 'Invalid Email Given';
+
+        setTimeout(function(){
+          document.getElementById('validateTXT').innerHTML = '';
+        }, 5000);
+
+        return false;
 
       }
 
