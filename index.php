@@ -25,16 +25,6 @@
     <!-- The parallax library I am using thanks to PixelCog -->
     <script src="js/parallax.min.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156268666-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-156268666-1');
-    </script>
-
     <script src="js/linlout.js"></script>
 
     <script>

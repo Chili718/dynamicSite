@@ -52,9 +52,9 @@ else if(isset($_POST['insert']))
     $to = $e;
     $subject = "Email Verification";
     $message = "<a href='https://jonticedesigns.com/login.php?vkey=$vk'>Register Account</a>";
-    $header = "From: tice@jonticedesigns.com \r\n ";
-    $header .= "MIME-Version: 1.0" . "\r\n";
+    $header = "MIME-Version: 1.0" . "\r\n";
     $header .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $header .= "From: tice@jonticedesigns.com \r\n ";
 
     mail($to, $subject, $message, $header);
     */

@@ -1,6 +1,13 @@
 <?php
 
-  require 'php/upload.php';
+session_start();
+//print_r($_SESSION);
+if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
+{
+  header("Location: login.php");
+  die();
+
+}
 
  ?>
 <!DOCTYPE html>
@@ -83,12 +90,12 @@
 
   <div class="upload">
 
-    <form class="frm" method="POST" enctype="multipart/form-data">
+    <form class="frm" id="frm" method="POST" enctype="multipart/form-data">
       <h1>Upload Image</h1>
       <h3 id="validateTXT"></h3>
 
       <?php
-        echo $stmtB
+        //echo $stmtB
       ?>
 
       <div class="hline">
@@ -110,17 +117,18 @@
       <br/>
 
       <?php
-            echo $stmt;
-            echo $close;
+            //echo $stmt;
+            //echo $close;
       ?>
 
-      <input type="submit" name="insert" id="insert" value="Upload"/>
+      <input type="button" name="insert" id="insert" value="Upload" onclick=""/>
     </div>
     </form>
 
   </div>
 
  <script src="js/app.js"></script>
+ <script src="js/uploadMin.js"></script>
 </body>
 
 </html>
@@ -162,6 +170,25 @@
           return false;
         }
       }
+
+      uploadAndResizeImage();
+
+      $.ajax({
+
+        url:'php/upload.php',
+        type:'post',
+        success:function(php_result){
+
+          console.log(php_result);
+
+        },
+        error: function(xhr){
+
+
+
+        }
+
+      });
 
     });
 

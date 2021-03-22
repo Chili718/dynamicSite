@@ -27,11 +27,7 @@ session_start();
 
   <script>
 
-  $(document).ready(function(){
-
-
-
-  });
+  var r = false;
 
   //change opacity of the header background on scroll
   $(window).on("scroll", function(){
@@ -49,11 +45,13 @@ session_start();
     var position = $(window).scrollTop();
     var bottom = $(document).height() - $(window).height();
 
-    if($(window).scrollTop() + $(window).height() > $(document).height()-1){
+    if($(window).scrollTop() + $(window).height() > $(document).height()-1 && r == false){
 
       var count = $(".psW").length;;
 
       console.log(count);
+
+      r = true;
 
       $.ajax({
 
@@ -65,6 +63,12 @@ session_start();
           //console.log("success");
           $(".grid div").last().after(response).show().fadeIn("slow");
           addLB();
+
+          setTimeout(function(){
+
+            r = false;
+
+          }, 4000);
 
         }
 
