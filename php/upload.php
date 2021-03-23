@@ -1,61 +1,57 @@
 <?php
-/*
+
 require 'dbCON.php';
 
 if (!$con) {
-  echo '<script>alert("Could not connect to db, whoops!")</script>';
-  die("<script>window.location = 'index.php';</script>");
+  echo 'dbf';
+  //die();
 }
-*/
-//$table = 'photoshopwork';
-$stmt = "";
-$stmtB = "";
-$close = "";
-
-echo $_POST['min'];
-
-/*
-if(isset($_POST['insert']))
+else
 {
-  //print_r($_FILES);
-  //print_r($_POST);
-  $picnim = $_POST['imageNme'];
-  $picdes = $_POST['imageDes'];
-
-  //echo $picnim;
-  //echo $picdes;
-
-  $imDir = 'photoshopWork/'.$_FILES['image']['name'];
-  move_uploaded_file($_FILES['image']['tmp_name'], $imDir);
-
-  $sql = $con->prepare("INSERT INTO photoshopwork (name, description, path) VALUES (?, ?, ?)");
-
-  $sql->bind_param("sss", $picnim, $picdes, $imDir);
-
-  //"INSERT INTO $table (name, description, path) VALUES ('$picnim','$picdes','$imDir')";
-
-  //$con->query($sql) or die($con->error);
-
-  if($sql->execute())
-  {
-
-    $stmt = "<h2 id='change'>Image Uploaded Successfully!</h2>";
-    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 3000);</script>";
-
-  }
-  else {
-
-    $stmtB = "<h3 id='change'>Image and or name already exists!</h3>";
-    $close = "<script>setTimeout(function(){document.getElementById('change').innerHTML = '';}, 3000);</script>";
-
-  }
+  $table = 'photoshopwork';
+  $stmt = "";
+  $stmtB = "";
+  $close = "";
 
 
+    //print_r($_FILES);
+    //print_r($_POST);
+    $picnim = $_POST['imageNme'];
+    $picdes = $_POST['imageDes'];
 
-  //mysql_close($con);
-  $sql->close();
-  $con->close();
+    //echo $picnim;
+    //echo $picdes;
 
+
+    $imDir = '../photoshopWork/'.$_FILES['image']['name'];
+    $minDir = '../photoshopWork/min/'.$_FILES['min']['name'];
+    move_uploaded_file($_FILES['image']['tmp_name'], $imDir);
+    move_uploaded_file($_FILES['min']['tmp_name'], $minDir);
+
+    $sql = $con->prepare("INSERT INTO photoshopwork (name, description, path) VALUES (?, ?, ?)");
+
+    $sql->bind_param("sss", $picnim, $picdes, $imDir);
+
+    //"INSERT INTO $table (name, description, path) VALUES ('$picnim','$picdes','$imDir')";
+
+    //$con->query($sql) or die($con->error);
+
+    if($sql->execute())
+    {
+
+      echo "success";
+    }
+    else {
+
+      echo "fail";
+
+    }
+
+    //mysql_close($con);
+    $sql->close();
+    $con->close();
 }
-*/
+
+
+
  ?>

@@ -94,10 +94,6 @@ if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
       <h1>Upload Image</h1>
       <h3 id="validateTXT"></h3>
 
-      <?php
-        //echo $stmtB
-      ?>
-
       <div class="hline">
       <div class="labl">
       <label for="imageNme" >Name: </label>
@@ -116,16 +112,15 @@ if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
       -->
       <br/>
 
-      <?php
-            //echo $stmt;
-            //echo $close;
-      ?>
+      <h2 id="confirm"></h2>
 
       <input type="button" name="insert" id="insert" value="Upload" onclick=""/>
     </div>
     </form>
 
   </div>
+
+  <!--<img id="test" src="">-->
 
  <script src="js/app.js"></script>
  <script src="js/uploadMin.js"></script>
@@ -172,23 +167,6 @@ if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
       }
 
       uploadAndResizeImage();
-
-      $.ajax({
-
-        url:'php/upload.php',
-        type:'post',
-        success:function(php_result){
-
-          console.log(php_result);
-
-        },
-        error: function(xhr){
-
-
-
-        }
-
-      });
 
     });
 
