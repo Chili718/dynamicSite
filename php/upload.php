@@ -28,9 +28,10 @@ else
     move_uploaded_file($_FILES['image']['tmp_name'], $imDir);
     move_uploaded_file($_FILES['min']['tmp_name'], $minDir);
 
+    $dir = 'photoshopWork/'.$_FILES['image']['name'];
     $sql = $con->prepare("INSERT INTO photoshopwork (name, description, path) VALUES (?, ?, ?)");
 
-    $sql->bind_param("sss", $picnim, $picdes, $imDir);
+    $sql->bind_param("sss", $picnim, $picdes, $dir);
 
     //"INSERT INTO $table (name, description, path) VALUES ('$picnim','$picdes','$imDir')";
 

@@ -17,8 +17,11 @@
      while($data = $result->fetch_assoc()){
 
        //print_r($data);
+       $minPath = substr_replace($data['path'], "Min", strripos($data['path'],"."),0);
 
-       echo "<div class = 'carousel_cell'><img src = '{$data['path']}' class='cil'></div>";
+       $minPath = substr_replace($minPath, "/min", strripos($minPath,"/"),0);
+
+       echo "<div class = 'carousel_cell'><img src = '{$minPath}' class='cil'></div>";
 
      }
 

@@ -114,7 +114,7 @@ if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
 
       <h2 id="confirm"></h2>
 
-      <input type="button" name="insert" id="insert" value="Upload" onclick=""/>
+      <input type="button" name="insert" id="insert" value="Upload"/>
     </div>
     </form>
 
@@ -132,8 +132,20 @@ if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
 
   $(document).ready(function(){
 
+    $("#frm").keydown(function(e){
+
+      if(e.which == 13){
+
+        checkUpload();
+
+      }
+
+    });
+
     $('#insert').click(function(){
 
+      checkUpload();
+      /*
       var image = $('#image').val();
       var image_name = $('#imageNme').val();
       var image_des = $('#imageDes').val();
@@ -167,7 +179,7 @@ if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
       }
 
       uploadAndResizeImage();
-
+      */
     });
 
   });

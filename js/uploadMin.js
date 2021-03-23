@@ -100,8 +100,6 @@ function uploadAndResizeImage() {
                       },
                       error: function(xhr){
 
-
-
                       }
 
                     });
@@ -117,4 +115,45 @@ function uploadAndResizeImage() {
     } else {
         alert('The File APIs are not fully supported in this browser.');
     }
+}
+
+
+function checkUpload(){
+
+  var image = document.getElementById('image').value;
+  var image_name = document.getElementById('imageNme').value;
+  var image_des = document.getElementById('imageDes').value;
+
+  //console.log(image);
+
+  if(image_name == '' || image == '' || image_des == '')
+  {
+    document.getElementById('validateTXT').innerHTML = 'Please complete all fields!';
+
+    setTimeout(function(){
+      document.getElementById('validateTXT').innerHTML = '';
+    }, 3000);
+
+    return false;
+
+  }
+  else
+  {
+    var extension = document.getElementById('image').value.split('.').pop().toLowerCase();
+    //console.log(extension);
+    if (!['gif', 'png', 'jpg', 'jpeg'].includes(extension))
+    {
+      document.getElementById('validateTXT').innerHTML = 'Invalid File Type!';
+
+      setTimeout(function(){
+        document.getElementById('validateTXT').innerHTML = '';
+      }, 3000);
+
+      document.getElementById('image').value = '';
+      return false;
+    }
+  }
+
+  //uploadAndResizeImage();
+
 }
