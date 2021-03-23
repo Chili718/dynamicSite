@@ -15,7 +15,11 @@ images.forEach(image => {
   image.firstChild.addEventListener('click',  e => {
     lightbox.classList.add('active');
     const splay = document.createElement('img');
-    splay.src = image.firstChild.src;
+
+    var bigger = image.firstChild.src.replace("Min", "");
+    bigger = bigger.replace("/min", "");
+    //console.log(bigger);
+    splay.src = bigger;
 
     while(lightbox.childElementCount >= 2){
 

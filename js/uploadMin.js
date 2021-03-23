@@ -154,6 +154,6 @@ function checkUpload(){
     }
   }
 
-  //uploadAndResizeImage();
+  uploadAndResizeImage();
 
 }

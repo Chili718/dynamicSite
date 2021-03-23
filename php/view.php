@@ -17,7 +17,11 @@ else
 
       //print_r($data);
 
-      echo "<div><h2>".$data["name"]."</h2><img class='psW' src = ".$data["path"]."></div>";
+      $minPath = substr_replace($data['path'], "Min", strripos($data['path'],"."),0);
+
+      $minPath = substr_replace($minPath, "/min", strripos($minPath,"/"),0);
+
+      echo "<div><h2>".$data["name"]."</h2><img class='psW' src = ".$minPath."></div>";
       //echo "<div><img src = ".$data["path"]."><h2>".$data["name"]."</h2></div>";
     }
 

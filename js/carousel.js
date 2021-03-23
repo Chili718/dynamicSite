@@ -36,10 +36,22 @@ prevButton.addEventListener('click', function(){
 
     var lit = lightbox.lastChild.src;
 
+    var begin = lightbox.lastChild.src.substring(0, lightbox.lastChild.src.lastIndexOf("/"));
+
+    begin = begin.concat("/min");
+
+    begin = begin.concat(lightbox.lastChild.src.substring(lightbox.lastChild.src.lastIndexOf("/"), lightbox.lastChild.src.lastIndexOf(".")));
+
+    begin = begin.concat("Min");
+
+    begin = begin.concat(lightbox.lastChild.src.substring(lightbox.lastChild.src.lastIndexOf("."), lightbox.lastChild.src.length));
+
+    //console.log(begin);
+
     var node = 0;
 
     for (var i = 0; i < cells.length; i++) {
-      if(cells[i].firstChild.src === lit)
+      if(cells[i].firstChild.src === begin)
       {
         if((i-1) != -1)
         {
@@ -51,11 +63,13 @@ prevButton.addEventListener('click', function(){
       }
     }
 
-    lit = cells[node].firstChild.src;
+    var bigger = cells[node].firstChild.src.replace("Min", "");
+    bigger = bigger.replace("/min", "");
     //console.log(node);
-    const splay = document.createElement('img');
-    splay.src = lit;
+    var splay = document.createElement('img');
+    splay.src = bigger;
 
+    //console.log(bigger);
     while(lightbox.childElementCount >= 2){
 
       lightbox.removeChild(lightbox.lastChild);
@@ -85,10 +99,20 @@ nextButton.addEventListener('click', function(){
 
     var lit = lightbox.lastChild.src;
 
+    var begin = lightbox.lastChild.src.substring(0, lightbox.lastChild.src.lastIndexOf("/"));
+
+    begin = begin.concat("/min");
+
+    begin = begin.concat(lightbox.lastChild.src.substring(lightbox.lastChild.src.lastIndexOf("/"), lightbox.lastChild.src.lastIndexOf(".")));
+
+    begin = begin.concat("Min");
+
+    begin = begin.concat(lightbox.lastChild.src.substring(lightbox.lastChild.src.lastIndexOf("."), lightbox.lastChild.src.length));
+
     var node = 0;
-    
+
     for (var i = 0; i < cells.length; i++) {
-      if(cells[i].firstChild.src === lit)
+      if(cells[i].firstChild.src === begin)
       {
         if((i+1) > cells.length-1){
           node = 0;
@@ -99,10 +123,11 @@ nextButton.addEventListener('click', function(){
       }
     }
 
-    lit = cells[node].firstChild.src;
+    var bigger = cells[node].firstChild.src.replace("Min", "");
+    bigger = bigger.replace("/min", "");
     //console.log(node);
-    const splay = document.createElement('img');
-    splay.src = lit;
+    var splay = document.createElement('img');
+    splay.src = bigger;
 
     while(lightbox.childElementCount >= 2){
 
