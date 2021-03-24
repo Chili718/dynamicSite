@@ -15,10 +15,20 @@ previous.addEventListener('click', function(){
 
     var lit = lightbox.lastChild.src;
 
+    var begin = lightbox.lastChild.src.substring(0, lightbox.lastChild.src.lastIndexOf("/"));
+
+    begin = begin.concat("/min");
+
+    begin = begin.concat(lightbox.lastChild.src.substring(lightbox.lastChild.src.lastIndexOf("/"), lightbox.lastChild.src.lastIndexOf(".")));
+
+    begin = begin.concat("Min");
+
+    begin = begin.concat(lightbox.lastChild.src.substring(lightbox.lastChild.src.lastIndexOf("."), lightbox.lastChild.src.length));
+
     var node = 0;
 
     for (var i = 0; i < boxes.length; i++) {
-      if(boxes[i].lastChild.src === lit)
+      if(boxes[i].lastChild.src === begin)
       {
         if((i-1) != -1)
         {
@@ -35,9 +45,12 @@ previous.addEventListener('click', function(){
     lightbox.lastChild.previousSibling.innerHTML = boxes[node].firstChild.innerHTML;
 
     lit = boxes[node].lastChild.src;
+
+    var bigger = lit.replace("Min", "");
+    bigger = bigger.replace("/min", "");
     //console.log(node);
     const splay = document.createElement('img');
-    splay.src = lit;
+    splay.src = bigger;
 
     lightbox.removeChild(lightbox.lastChild);
 
@@ -49,10 +62,22 @@ next.addEventListener('click', function(){
 
     var lit = lightbox.lastChild.src;
 
+    var begin = lightbox.lastChild.src.substring(0, lightbox.lastChild.src.lastIndexOf("/"));
+
+    begin = begin.concat("/min");
+
+    begin = begin.concat(lightbox.lastChild.src.substring(lightbox.lastChild.src.lastIndexOf("/"), lightbox.lastChild.src.lastIndexOf(".")));
+
+    begin = begin.concat("Min");
+
+    begin = begin.concat(lightbox.lastChild.src.substring(lightbox.lastChild.src.lastIndexOf("."), lightbox.lastChild.src.length));
+
+    //console.log(begin);
+
     var node = 0;
 
     for (var i = 0; i < boxes.length; i++) {
-      if(boxes[i].lastChild.src === lit)
+      if(boxes[i].lastChild.src === begin)
       {
         if((i+1) > boxes.length-1){
           node = 0;
@@ -69,8 +94,11 @@ next.addEventListener('click', function(){
 
     lit = boxes[node].lastChild.src;
 
+    var bigger = lit.replace("Min", "");
+    bigger = bigger.replace("/min", "");
+
     const splay = document.createElement('img');
-    splay.src = lit;
+    splay.src = bigger;
 
     lightbox.removeChild(lightbox.lastChild);
 
@@ -218,7 +246,10 @@ function addLB(){
       lightbox.classList.add('active');
 
       const splay = document.createElement('img');
-      splay.src = image.src;
+      var bigger = image.src.replace("Min", "");
+      bigger = bigger.replace("/min", "");
+      //console.log(bigger);
+      splay.src = bigger;
 
 
 

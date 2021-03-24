@@ -26,6 +26,23 @@
         echo "Successful Delete!";
       }
 
+      $minPath = substr_replace($_POST['path'], "Min", strripos($_POST['path'],"."),0);
+
+      $minPath = substr_replace($minPath, "/min", strripos($minPath,"/"),0);
+
+      $minPath = "../".$minPath;
+
+      //echo $minPath;
+
+      if(!unlink($minPath))
+      {
+        //echo "Could not remove file from local system...";
+      }
+      else
+      {
+        echo "Successful Delete!";
+      }
+
 
     }
     else {

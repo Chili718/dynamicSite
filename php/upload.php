@@ -22,12 +22,6 @@ else
     //echo $picnim;
     //echo $picdes;
 
-
-    $imDir = '../photoshopWork/'.$_FILES['image']['name'];
-    $minDir = '../photoshopWork/min/'.$_FILES['min']['name'];
-    move_uploaded_file($_FILES['image']['tmp_name'], $imDir);
-    move_uploaded_file($_FILES['min']['tmp_name'], $minDir);
-
     $dir = 'photoshopWork/'.$_FILES['image']['name'];
     $sql = $con->prepare("INSERT INTO photoshopwork (name, description, path) VALUES (?, ?, ?)");
 
@@ -39,7 +33,10 @@ else
 
     if($sql->execute())
     {
-
+      $imDir = '../photoshopWork/'.$_FILES['image']['name'];
+      $minDir = '../photoshopWork/min/'.$_FILES['min']['name'];
+      move_uploaded_file($_FILES['image']['tmp_name'], $imDir);
+      move_uploaded_file($_FILES['min']['tmp_name'], $minDir);
       echo "success";
     }
     else {
