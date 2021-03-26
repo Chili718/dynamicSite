@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Jon Tice - Designer and Developer</title>
+    <title>Jon Tice - Designer and Full Stack Web Developer</title>
     <link rel="icon" href="images/icon.ico">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/caro.css">

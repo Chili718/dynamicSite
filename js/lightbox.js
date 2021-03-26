@@ -41,7 +41,7 @@ images.forEach(image => {
     var node = 0;
 
     for (var i = 0; i < cells.length; i++) {
-      if(cells[i].firstChild.src === splay.src)
+      if(cells[i].firstChild.src === image.firstChild.src)
       {
           node = i;
           break;

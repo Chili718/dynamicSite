@@ -35,11 +35,11 @@ function login(){
 
 function logout(){
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "php/logout.php", true);
+  xhr.open("POST", "../php/logout.php", true);
   xhr.addEventListener("readystatechange", function(){
     if (xhr.readyState === 4 && xhr.status === 200){
 
-        window.location = "login.php";
+        window.location = "https://jonticedesigns.com/login.php";
 
     }
   });
