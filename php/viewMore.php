@@ -22,7 +22,7 @@ else
       $stmt->execute();
       $result = $stmt->get_result();
 
-      echo printHtml($result);
+      //echo printHtml($result);
     }
 
   }

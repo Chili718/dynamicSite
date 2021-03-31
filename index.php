@@ -170,12 +170,8 @@
         <h1>About Me</h1>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt facilisis elementum. Proin tortor lorem, vehicula et libero quis,
-          convallis fermentum nunc. Quisque sed urna sollicitudin, suscipit augue quis, porttitor odio. Maecenas ut elementum lorem. Etiam sagittis ex ante.
-          Aliquam eu nibh tortor. Suspendisse dignissim aliquet ex, eu mattis sem feugiat vitae. Quisque semper facilisis nisl, a maximus nulla ullamcorper
-          eu. Vivamus id vestibulum velit. Phasellus ornare nec ex vel commodo. Phasellus euismod elit tortor, et dapibus risus cursus ut. Donec pharetra odio augue,
-          porta egestas velit faucibus at. Quisque tristique ipsum arcu, eu fermentum risus sollicitudin vitae. Morbi vel enim magna. Suspendisse blandit dignissim tristique.
-          Ut ullamcorper eget erat iaculis ornare.
+          I am programmer who focuses on website development with HTML, JavaScript, CSS, PHP, and MySQL. My background in programming has quite the breadth of exposure from not only my education but my eagerness to learn and accept challenges. While I mainly stick to my full stack development, I've spent a good amount of time with other languages such as C++, C#(Unity), Java, and Python.
+          The greatest thing about web development is each project I tackle is a challenge in terms of creativity and logic. The process of assessing the needs of a user and going from design to implementation never leaves you without a problem that needs a new solution. I am never not learning and am certainly never bored.
         </p>
       </div>
 
@@ -265,7 +261,7 @@
 
       </section>
 
-     <section class="end">
+     <section class="end" id="contact">
 
          <h1>Thanks for stopping by!</h1>
 

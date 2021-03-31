@@ -49,7 +49,7 @@ session_start();
 
       var count = $(".psW").length;;
 
-      console.log(count);
+      //console.log(count);
 
       r = true;
 

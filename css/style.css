@@ -700,25 +700,6 @@ Photoshop Projects
 /**************************************************************************
 End (Footer kind of)
 **************************************************************************/
-#contact img{
-
-  object-fit:  contain;
-  position: absolute;
-  width: 100vw;
-  height: inherit;
-
-
-}
-#contact p{
-
-  position: relative;
-  overflow: hidden;
-  height: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
 
 .end{
 
