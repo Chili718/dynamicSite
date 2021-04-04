@@ -6,10 +6,10 @@ function detectSwipe(el,func){
       swipe_det.eX = 0;
       swipe_det.eY = 0;
 
-      var min_x = 20;  //min x swipe for horizontal swipe
+      var min_x = 45;  //min x swipe for horizontal swipe
       var max_x = 40;  //max x difference for vertical swipe
       var min_y = 40;  //min y swipe for vertical swipe
-      var max_y = 50;  //max y difference for horizontal swipe
+      var max_y = 200;  //max y difference for horizontal swipe
       var direc = "";
 
 
@@ -29,15 +29,16 @@ function detectSwipe(el,func){
 
       ele.addEventListener('touchend',function(e){
         //horizontal detection
-        if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y)))) {
+        if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y))))
+        {
 
-          if(swipe_det.eX > swipe_det.sX)
+          if(swipe_det.eX > swipe_det.sX && ((swipe_det.eX != 0) && (swipe_det.sX != 0)))
           {
 
             direc = "r";
 
           }
-          else
+          else if((swipe_det.eX != 0) && (swipe_det.sX != 0))
           {
 
             direc = "l";
@@ -75,6 +76,10 @@ function detectSwipe(el,func){
 
         }
         direc = "";
+        swipe_det.sX = 0;
+        swipe_det.sY = 0;
+        swipe_det.eX = 0;
+        swipe_det.eY = 0;
       },false);
 
     }
