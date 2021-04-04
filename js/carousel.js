@@ -28,8 +28,7 @@ function rotateCarousel(){
 ////////////////////////////////////////////////////////////
 var prevButton = document.querySelector('.previous');
 
-prevButton.addEventListener('click', function(){
-
+function previousCar(){
 
   if(lightbox.classList.contains('active'))
   {
@@ -88,11 +87,17 @@ prevButton.addEventListener('click', function(){
 
   changeCarousel();
 
+}
+
+prevButton.addEventListener('click', function(){
+
+  previousCar();
+
 });
 //////////////////////////////////////////////////////////////
 var nextButton = document.querySelector('.next');
 
-nextButton.addEventListener('click', function(){
+function nextCar(){
 
   if(lightbox.classList.contains('active'))
   {
@@ -146,7 +151,33 @@ nextButton.addEventListener('click', function(){
   changeCarousel();
   //console.log(selectedIndex + "Next");
 
+}
+
+nextButton.addEventListener('click', function(){
+
+  nextCar();
+
 });
+
+function swipeDir(dir){
+
+  if(dir == 'l')
+  {
+
+    nextCar();
+
+  }
+  else if(dir == 'r')
+  {
+
+    previousCar();
+
+  }
+
+}
+
+detectSwipe('lightbox', swipeDir);
+detectSwipe('scene', swipeDir);
 
 function changeCarousel(){
 

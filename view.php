@@ -167,6 +167,7 @@ session_start();
     <div id="viewPrevious"><img src="images/arrow.png"></div>
     <div id="viewNext"><img src="images/arrow.png"></div>
   </div>
+  <script src="js/swipe.js"></script>
   <script src="js/viewLightbox.js"></script>
  <script src="js/app.js"></script>
 </body>

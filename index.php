@@ -170,7 +170,7 @@
         <h1>About Me</h1>
 
         <p>
-          I am programmer who focuses on website development with HTML, JavaScript, CSS, PHP, and MySQL. My background in programming has quite the breadth of exposure from not only my education but my eagerness to learn and accept challenges. While I mainly stick to my full stack development, I've spent a good amount of time with other languages such as C++, C#(Unity), Java, and Python.
+          I am a programmer who focuses on website development with HTML, JavaScript, CSS, PHP, and MySQL. My background in programming has quite the breadth of exposure from not only my <a href="https://github.com/Chili718/Course-Work" target="_blank" rel="noopener noreferrer">education</a> but my eagerness to learn and accept challenges. While I mainly stick to my full stack development, I've spent a good amount of time with other languages such as C++, C#(Unity), Java, and Python.
           The greatest thing about web development is each project I tackle is a challenge in terms of creativity and logic. The process of assessing the needs of a user and going from design to implementation never leaves you without a problem that needs a new solution. I am never not learning and am certainly never bored.
         </p>
       </div>
@@ -238,10 +238,12 @@
        <h1>Photoshop Work</h3>
 
        <p class ="andMore">
-         In order to get better at using Photoshop I would make an image every day that would help me learn something new about the program and improve upon my design skills. After doing this for a whole year I was left with a deep understanding of Photoshop and a large body of work. I can 100% guarantee you will like at least one of my images so check them out! I ended up really enjoying the experience and taking a lot from it so, anytime I want to learn a program, coding language, or anything I apply the same principle. I still make images for fun and will upload them here and on my Instagram when they are finished.
+         In order to get better at using Photoshop I would make an image every day that would help me learn something new about the program and improve upon my design skills. After doing this for a whole year I was left with a deep understanding of Photoshop and a large body of work.
+         I don't have all 365 images on here, but it's instead a selection of what I thought was at least decent to really good. This also contains other images I've done after the whole year which I've spent more than a couple hours in a day on.
+         Theres a lot to look at and I can 100% guarantee you will like at least one of my images so check them out! I ended up really enjoying the experience and taking a lot from it. Anytime I want to learn a program, coding language, or anything I apply the same principle. I still make images for fun and will upload them here and on my Instagram when they are finished.
        </p>
 
-       <div class="scene">
+       <div class="scene" id="scene">
          <div class="carousel">
 
              <?php require "php/gp.php";?>
@@ -283,6 +285,7 @@
         <img id = "closeBox" src="images/closeLightboxIcon.png">
       </div>
 
+      <script src="js/swipe.js"></script>
       <script src="js/carousel.js"></script>
       <script src="js/lightbox.js"></script>
       <script src="js/app.js"></script>
