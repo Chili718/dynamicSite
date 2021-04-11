@@ -45,7 +45,7 @@ session_start();
     var position = $(window).scrollTop();
     var bottom = $(document).height() - $(window).height();
 
-    if($(window).scrollTop() + $(window).height() > $(document).height()-1 && r == false){
+    if($(window).scrollTop() + $(window).height() > $(document).height()-25 && r == false){
 
       var count = $(".psW").length;;
 
