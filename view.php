@@ -45,7 +45,7 @@ session_start();
     var position = $(window).scrollTop();
     var bottom = $(document).height() - $(window).height();
 
-    if($(window).scrollTop() + $(window).height() > $(document).height()-25 && r == false){
+    if($(window).scrollTop() + $(window).height() > $(document).height()-50 && r == false){
 
       var count = $(".psW").length;;
 
@@ -103,7 +103,7 @@ session_start();
         <li><a href="index.php#projects">Projects</a></li>
         <li><a href="index.php#photoshop">Photoshop Work</a></li>
         <li><a href="index.php#contact">Contact</a></li>
-        <li><a href="">Resume</a></li>
+        <li><a href="downloads/Resume.pdf" download="JonTiceResume">Resume</a></li>
         <?php
 
           if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)

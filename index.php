@@ -101,7 +101,7 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#photoshop">Photoshop Work</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="">Resume</a></li>
+          <li><a href="downloads/Resume.pdf" download="JonTiceResume">Resume</a></li>
 
           <?php
 
@@ -173,6 +173,8 @@
           I am a programmer who focuses on website development with HTML, JavaScript(REACT & jQuery), CSS, PHP, and MySQL. My background in programming has quite the breadth of exposure from not only my <a href="https://github.com/Chili718/Course-Work" target="_blank" rel="noopener noreferrer">education</a> but my eagerness to learn and accept challenges. While I mainly stick to my full stack development, I've spent a good amount of time with other languages such as C++, C#(Unity), Java, and Python.
           The greatest thing about web development is each project I tackle is a challenge in terms of creativity and logic. The process of assessing the needs of a user and going from design to implementation never leaves you without a problem that needs a new solution. I am never not learning and am certainly never bored.
         </p>
+        <a href="downloads/Resume.pdf" download="JonTiceResume"><div class="btn">Resume</div></a>
+
       </div>
 
     </section>

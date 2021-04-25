@@ -62,7 +62,7 @@ if(isset($_SESSION['verified']))
         <li><a href="index.php#projects">Projects</a></li>
         <li><a href="index.php#photoshop">Photoshop Work</a></li>
         <li><a href="index.php#contact">Contact</a></li>
-        <li><a href="">Resume</a></li>
+        <li><a href="downloads/Resume.pdf" download="JonTiceResume">Resume</a></li>
         <?php
 
           if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)

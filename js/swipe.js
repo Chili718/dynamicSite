@@ -29,7 +29,7 @@ function detectSwipe(el,func){
 
       ele.addEventListener('touchend',function(e){
         //horizontal detection
-        if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y))) && e.touches.length == 1)
+        if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y))))
         {
 
           if(swipe_det.eX > swipe_det.sX && ((swipe_det.eX != 0) && (swipe_det.sX != 0)))
