@@ -195,6 +195,18 @@
 
       </div>
 
+      <div>
+        <h2>Part of the Goodness</h2>
+        <div class="container">
+          <img src="images/partofthegoodness.jpg">
+          <div class="org">
+            <a href="https://partofthegoodness.com/" target="_blank" rel="noopener noreferrer">View Website</a>
+          </div>
+       </div>
+       <p>Tap or Hover for more!</p>
+
+      </div>
+
     </section>
 
      <section class="codeprojects" id="projects">

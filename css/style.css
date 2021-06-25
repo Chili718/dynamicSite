@@ -506,7 +506,7 @@ Freelance Work
 
   padding-top: 10vw;
   background-color: #023b3e;
-  padding-bottom: 10vw;
+  padding-bottom: calc(10vw + 4vh);
 
 }
 
@@ -591,6 +591,7 @@ Code Projects
   color: rgba(255,255,255,0);
   padding: 10% 0%;
   visibility: hidden;
+  font-size: 1.5rem;
 
 }
 
