@@ -19,10 +19,10 @@
 
 }
 
-#lightbox img{
-
-  max-width: 85%;
-  max-height: 85%;
+#lightbox img:last-of-type{
+  padding-top: 6%;
+  max-width: 95%;
+  max-height: 90%;
   object-fit: contain;
 
 }
@@ -30,8 +30,8 @@
 #closeBox{
 
   z-index: 101;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: 1vw;
   right: 1vw;

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 //print_r($_SESSION);
 
@@ -27,9 +28,29 @@ session_start();
 
   <script>
 
+  //when the ajax request on the page is made for getting more
+  //images the loading element will be displayed
+  $(document).ajaxStart(function(){
+    //show the loading animation
+    $('#load').toggleClass('hideGroup');
+    //console.log("unhide");
+
+    }).ajaxStop(function(){
+    //hide the loading animtaion after 2.5s to show the whole
+    //animation as a visual for user
+    setTimeout(function(){
+      $('#load').toggleClass('hideGroup');
+      //console.log("hide");
+    }, 2500);
+
+  });
+
+  //boolean for limiting how often a request for more
+  //images can be sent
   var r = false;
 
   //change opacity of the header background on scroll
+  //and the add user/image tiles
   $(window).on("scroll", function(){
 
     if($(window).scrollTop() > 0){
@@ -42,8 +63,8 @@ session_start();
       $(".addIM").removeClass("nottransparent");
     }
 
-    var position = $(window).scrollTop();
-    var bottom = $(document).height() - $(window).height();
+    //var position = $(window).scrollTop();
+    //var bottom = $(document).height() - $(window).height();
 
     if($(window).scrollTop() + $(window).height() > $(document).height()-50 && r == false){
 
@@ -52,7 +73,7 @@ session_start();
       //console.log(count);
 
       r = true;
-
+      //ajax request to put another 20 or less images on the page
       $.ajax({
 
         url: 'php/viewMore.php',
@@ -60,15 +81,19 @@ session_start();
         data: {count: count},
         success: function(response){
 
-          //console.log("success");
-          $(".grid div").last().after(response).show().fadeIn("slow");
-          addLB();
+          //timeout to display the images after the loading animation plays once
+          setTimeout(function(){
+            //console.log("success");
+            $(".grid div").last().after(response).show().fadeIn("slow");
+            addLB();
 
+          }, 2500);
+          //timeout for allowing another request for images to be sent
           setTimeout(function(){
 
             r = false;
 
-          }, 4000);
+          }, 5000);
 
         }
 
@@ -105,7 +130,7 @@ session_start();
         <li><a href="index.php#contact">Contact</a></li>
         <li><a href="downloads/Resume.pdf" download="JonTiceResume">Resume</a></li>
         <?php
-
+          //display log in or logged out depending on if someone is logged in
           if(!isset($_SESSION['verified']) || $_SESSION['verified'] !== true)
           {
 
@@ -128,7 +153,7 @@ session_start();
   </div>
 
   <?php
-
+  //display add user and image tile when user is logged in
   if(isset($_SESSION['verified']))
   {
 
@@ -142,7 +167,7 @@ session_start();
   <div class="contain">
     <div class="grid">
       <?php
-
+        //inital 20 images for the page
         require "php/view.php";
 
        ?>
@@ -151,10 +176,18 @@ session_start();
 
   <h3 id="validateTXT"></h3>
 
+  <div class="group hideGroup" id="load">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
   <div id="lightbox">
     <img id="closeBox" src="images/closeLightboxIcon.png">
     <?php
-
+    //display ability to delete image when user is logged in on the lightbox
     if(isset($_SESSION['verified']))
     {
 

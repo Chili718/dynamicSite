@@ -18,6 +18,7 @@ function detectSwipe(el,func){
         var t = e.touches[0];
         swipe_det.sX = t.screenX;
         swipe_det.sY = t.screenY;
+        document.body.style.overflow = "hidden";
       },false);
 
       ele.addEventListener('touchmove',function(e){
@@ -25,6 +26,7 @@ function detectSwipe(el,func){
         var t = e.touches[0];
         swipe_det.eX = t.screenX;
         swipe_det.eY = t.screenY;
+
       },false);
 
       ele.addEventListener('touchend',function(e){
@@ -46,6 +48,7 @@ function detectSwipe(el,func){
           }
 
         }
+        document.body.style.overflow = "scroll";
         /*
         //vertical detection
         if ((((swipe_det.eY - min_y > swipe_det.sY) || (swipe_det.eY + min_y < swipe_det.sY)) && ((swipe_det.eX < swipe_det.sX + max_x) && (swipe_det.sX > swipe_det.eX - max_x)))) {
@@ -81,5 +84,4 @@ function detectSwipe(el,func){
         swipe_det.eX = 0;
         swipe_det.eY = 0;
       },false);
-
-    }
+}
