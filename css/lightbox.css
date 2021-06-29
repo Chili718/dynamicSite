@@ -20,7 +20,7 @@
 }
 
 #lightbox img:last-of-type{
-  padding-top: 6%;
+  padding-top: 3%;
   max-width: 95%;
   max-height: 90%;
   object-fit: contain;

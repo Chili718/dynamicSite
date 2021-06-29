@@ -91,7 +91,11 @@ ham.addEventListener("click", ()=>{
 window.addEventListener('load', () => {
 
   const preload = document.querySelector('.preloader');
-  preload.classList.add('loaded');
+  setTimeout(function(){
+
+    preload.classList.add('loaded');
+
+  }, 2000);
 
 });
 
